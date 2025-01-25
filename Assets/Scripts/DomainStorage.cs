@@ -31,6 +31,11 @@ public static class DomainStorage
         return null;
     }
 
+    public static Dictionary<string, DomainInfo> getDomainInfoList()
+    {
+        return urlIdPairs;
+    }
+
     public static void BuildUrlPacks()
     {
         urlIdPairs.Clear();
