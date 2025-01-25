@@ -63,6 +63,7 @@ public class tabButtonManager : MonoBehaviour
                 tabRect.sizeDelta = new Vector2(tabRect.sizeDelta.x * newWidth, tabRect.sizeDelta.y);
 
                 ////RESIZE BUTTONS AS WELL
+                
             }
         }
 

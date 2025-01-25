@@ -13,10 +13,19 @@ public class timerScript : MonoBehaviour
     void Start()
     {
         timeElapsed = finalTime;
+        playGame();
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (!startGame)
+            {
+                playGame();
+            }
+        }
+
         if(startGame)
         {
             //Add to timer and finish game if timer passes target time (6 mins)
@@ -58,5 +67,10 @@ public class timerScript : MonoBehaviour
     public float getTimeElapsed()
     {
         return timeElapsed;
+    }
+
+    public bool getStartGame()
+    {
+        return startGame;
     }
 }
