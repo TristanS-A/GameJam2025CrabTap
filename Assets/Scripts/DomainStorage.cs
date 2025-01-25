@@ -36,6 +36,11 @@ public static class DomainStorage
         return urlIdPairs;
     }
 
+    public static void removeID(string id)
+    {
+        urlIdPairs.Remove(id);
+    }
+
     public static List<string> createFullTrendList()
     {
         trends = new List<string>();

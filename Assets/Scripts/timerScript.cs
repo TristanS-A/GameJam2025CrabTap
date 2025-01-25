@@ -13,6 +13,7 @@ public class timerScript : MonoBehaviour
     void Start()
     {
         timeElapsed = finalTime;
+        playGame();
     }
 
     void Update()

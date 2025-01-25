@@ -6,6 +6,7 @@ TagManager:
   tags:
   - money
   - SceneManager
+  - trends
   layers:
   - Default
   - TransparentFX
