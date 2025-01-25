@@ -44,6 +44,7 @@ public class DomainManager : MonoBehaviour
         }
         else
         {
+            eventSystem.fireEvent(new ErrorEvent("Domain does not exist!"));
             Debug.Log("Domain does not exist");
         }
     }

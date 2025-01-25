@@ -500,7 +500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4961665645426117460}
   m_Layer: 0
-  m_Name: BuyWindowScreen
+  m_Name: BuyWindowScreen 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -912,7 +912,6 @@ GameObject:
   - component: {fileID: 7481742138109604660}
   - component: {fileID: 7808957881201793266}
   - component: {fileID: 8895709959243228378}
-  - component: {fileID: 3271087424492555231}
   m_Layer: 0
   m_Name: WindowCanvas
   m_TagString: Untagged
@@ -1003,21 +1002,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3271087424492555231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8748118150406378440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5923c7bdc148b6545ba23b67315ab3ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mInputField: {fileID: 5828855565832948418}
-  mConfirmButton: {fileID: 6186532626829669438}
-  m_ErrorPopup: {fileID: 5910551585824794755, guid: 37aa5b55800643f4ba4c017b43e8315b, type: 3}
 --- !u!1 &8819248455532950037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1014,7 @@ GameObject:
   - component: {fileID: 8687149375681070538}
   - component: {fileID: 460376390718927545}
   - component: {fileID: 5828855565832948418}
+  - component: {fileID: 3665453723954114725}
   m_Layer: 5
   m_Name: DomainKeyInput
   m_TagString: Untagged
@@ -1194,6 +1179,20 @@ MonoBehaviour:
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
+--- !u!114 &3665453723954114725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8819248455532950037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5923c7bdc148b6545ba23b67315ab3ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mInputField: {fileID: 5828855565832948418}
+  mConfirmButton: {fileID: 6186532626829669438}
 --- !u!1 &9126594110459399912
 GameObject:
   m_ObjectHideFlags: 0

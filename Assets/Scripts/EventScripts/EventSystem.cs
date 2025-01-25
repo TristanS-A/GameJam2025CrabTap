@@ -5,14 +5,16 @@ using UnityEngine;
 
 public static class eventSystem
 {
-    public static event Action<string> makeTextPopUp;
+    public static event Action<string> errorMessage;
 
     public static void fireEvent(eventType type)
     {
         switch (type.getEventType())
         {
-            case eventType.EventTypes.Confirm:
-                //startGame.Invoke();
+            case eventType.EventTypes.ERROR_MESSAGE:
+                ErrorEvent errorMes = (ErrorEvent)(type);
+                errorMessage.Invoke(errorMes.getMessage());
+                Debug.Log(errorMes.getMessage());
                 break;
         }
     }

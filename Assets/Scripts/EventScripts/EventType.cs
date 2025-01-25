@@ -7,7 +7,7 @@ public class eventType
 {
     public enum EventTypes
     {
-        Confirm,
+        ERROR_MESSAGE,
     }
 
     private EventTypes _type;
