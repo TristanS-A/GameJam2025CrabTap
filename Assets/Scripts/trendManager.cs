@@ -33,6 +33,11 @@ public class trendManager : MonoBehaviour
         trends[i] = s;
     }
 
+    public List<string> getTrends()
+    {
+        return trends;
+    }
+
     public float getTrendMult(string trend)
     {
         int i = trends.IndexOf(trend);

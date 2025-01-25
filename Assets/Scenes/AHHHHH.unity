@@ -130,17 +130,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3572618586330798328, guid: bfd0b3a31f70e064bb8ed83dc64e94de, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 4022336912326621043, guid: bfd0b3a31f70e064bb8ed83dc64e94de, type: 3}
       propertyPath: m_Name
       value: TrendWindowScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 4022336912326621043, guid: bfd0b3a31f70e064bb8ed83dc64e94de, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4961665645426117460, guid: bfd0b3a31f70e064bb8ed83dc64e94de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -186,13 +178,8 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 89839534}
-    m_RemovedComponents:
-    - {fileID: 6141684621286151844, guid: bfd0b3a31f70e064bb8ed83dc64e94de, type: 3}
-    - {fileID: 3181083603371350612, guid: bfd0b3a31f70e064bb8ed83dc64e94de, type: 3}
-    - {fileID: 5066274382060060074, guid: bfd0b3a31f70e064bb8ed83dc64e94de, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 6326766524113195409, guid: bfd0b3a31f70e064bb8ed83dc64e94de, type: 3}
-    - {fileID: 7005711604525523543, guid: bfd0b3a31f70e064bb8ed83dc64e94de, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfd0b3a31f70e064bb8ed83dc64e94de, type: 3}
@@ -890,6 +877,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1274518368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1274518370}
+  - component: {fileID: 1274518369}
+  m_Layer: 0
+  m_Name: trendManager
+  m_TagString: trends
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1274518369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274518368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c80c811a04192041b3edacf78b64209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1274518370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274518368}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.119971, y: -1.8868736, z: -3.3705823}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1387571246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,3 +1065,4 @@ SceneRoots:
   - {fileID: 1091552928}
   - {fileID: 89839535}
   - {fileID: 1333410}
+  - {fileID: 1274518370}

@@ -11,16 +11,12 @@ public class HotTrendBehavior : MonoBehaviour
 
     private string[] hotTrends = new string[3];
     private List<string> allTrends;
-    private List<int> alreadyUsedTrends = new List<int>();
+    private List<string> alreadyUsedTrends = new List<string>();
 
     void Start()
     {
         allTrends = DomainStorage.createFullTrendList();
-
-        for (int i = 0; i < hotTrends.Length; i++)
-        {
-            FillTrends(i);
-        }
+        FillTrends();
     }
 
     void Update()
@@ -29,26 +25,21 @@ public class HotTrendBehavior : MonoBehaviour
         {
             if(timer.getStartGame())
             {
-                for (int i = 0; i < hotTrends.Length; i++)
-                {
-                    FillTrends(i);
-                }
+                FillTrends();
             }
         }
     }
 
-    void FillTrends(int i)
+
+
+    void FillTrends()
     {
-        int randIndex = Random.Range(1, allTrends.Count);
-        if (alreadyUsedTrends.Contains(randIndex))
+        for (int i = 0; i < hotTrends.Length; i++)
         {
-            FillTrends(i);
-        }
-        else
-        {
+            int randIndex = Random.Range(1, allTrends.Count);
             hotTrends[i] = allTrends[randIndex];
             hotTrendsText[i].text = hotTrends[i];
-            alreadyUsedTrends.Add(randIndex);
+            alreadyUsedTrends.Add(allTrends[randIndex]);
         }
     }
 }
