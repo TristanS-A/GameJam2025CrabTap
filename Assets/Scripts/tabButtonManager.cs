@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class tabButtonManager : MonoBehaviour
@@ -18,22 +19,11 @@ public class tabButtonManager : MonoBehaviour
     void Start()
     {
         tabBarRect = GetComponent<RectTransform>();
-        addTab("Hello");
-        addTab("Hello");
-        addTab("Hello");
-        addTab("Hello");
-        addTab("Hello");
-        addTab("Hello");
-        addTab("Hello");
-        addTab("Hello");
-        addTab("Hello");
-        addTab("Hello");
-        addTab("Hello");
-        addTab("Hello");
-        addTab("Hello");
-        addTab("Hello");
-        addTab("Hello");
-        addTab("End");
+        addTab("Hello", "www");
+        addTab("Hello", "wwww");
+        addTab("Hello", "wwwww");
+        addTab("Hello", "wwwwww");
+        addTab("End", "wew");
     }
 
     // Update is called once per frame
@@ -48,7 +38,7 @@ public class tabButtonManager : MonoBehaviour
     }
 
     //Function to add a new button
-    public void addTab(string title)
+    public void addTab(string title, string url)
     {
         GameObject newTab = Instantiate(tabPrefab);
         newTab.GetComponentInChildren<TextMeshProUGUI>().text = title;
@@ -81,5 +71,21 @@ public class tabButtonManager : MonoBehaviour
         newTabPos += new Vector2(totalTabLength, 0);
         newTabRect.localPosition = newTabPos;
         tabButtons.Add(newTab);
+
+        EventTrigger trigger = newTab.GetComponentInChildren<EventTrigger>();
+        EventTrigger.Entry entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerDown;
+        entry.callback.AddListener((data) => { switchWindow((BaseEventData)data); });
+        trigger.triggers.Add(entry);
+
+        newTab.GetComponentInChildren<tabScript>().WindowName = url;
+
+        DomainStorage.addToWindows(url, newTab);
+    }
+
+    public void switchWindow(BaseEventData eventData)
+    {
+        //Debug.Log(data);
+        Debug.Log(eventData.selectedObject.GetComponent<tabScript>().WindowName);
     }
 }

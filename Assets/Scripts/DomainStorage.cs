@@ -5,6 +5,7 @@ using UnityEngine;
 public static class DomainStorage
 {
     private static Dictionary<string, DomainInfo> urlIdPairs = new Dictionary<string, DomainInfo>();
+    private static Dictionary<string, GameObject> windows = new();
     private static List<DomainInfo> urls = new List<DomainInfo>();
     private static List<string> trends;
 
@@ -34,6 +35,26 @@ public static class DomainStorage
     public static Dictionary<string, DomainInfo> getDomainInfoList()
     {
         return urlIdPairs;
+    }
+
+    public static Dictionary<string, GameObject> getWindowDictionary()
+    {
+        return windows;
+    }
+
+    public static void addToWindows(string key, GameObject window)
+    {
+        if (!windows.ContainsKey(key))
+        {
+            windows.Add(key, window);
+        }
+    }
+
+    public static GameObject getWindowFromKey(string key)
+    {
+        GameObject window = null;
+        windows.TryGetValue(key, out window);
+        return window;
     }
 
     public static List<string> createFullTrendList()
