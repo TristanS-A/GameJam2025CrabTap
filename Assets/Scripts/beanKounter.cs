@@ -5,8 +5,13 @@ using UnityEngine;
 public class beanKounter : MonoBehaviour
 {
     [SerializeField] private float startingMoney = 5.0f;
-    private float playerMonee = 0;
-    
+    private float playerMonee;
+
+    void Start()
+    {
+        playerMonee = startingMoney;
+    }
+
     //Getters and setters
     public float getMonee()
     {
