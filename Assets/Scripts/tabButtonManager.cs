@@ -8,20 +8,26 @@ using UnityEngine.UI;
 public class tabButtonManager : MonoBehaviour
 {
     [SerializeField] private GameObject tabPrefab;
+    [SerializeField] private GameObject _DomainWindow;
+    [SerializeField] private GameObject _TrendsWindow;
+    [SerializeField] private GameObject _BuyWindow;
     public List<Button> purchasedDomains;
     [SerializeField] Button websiteTabTemplate;
     [SerializeField] Canvas canvas;
-    private RectTransform tabBarRect; 
+    private RectTransform tabBarRect;
+    private GameObject mCurrWindow;
 
     private List<GameObject> tabButtons = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
+        mCurrWindow = _DomainWindow;
+
         tabBarRect = GetComponent<RectTransform>();
-        addTab("Hello", "www");
-        addTab("Hello", "wwww");
-        addTab("Hello", "wwwww");
+        addTab("Hello", "www.domains.com");
+        addTab("Hello", "www.trends.com");
+        addTab("Hello", "www.buydomains.com");
         addTab("Hello", "wwwwww");
         addTab("End", "wew");
     }
@@ -29,7 +35,7 @@ public class tabButtonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void toWebsite()
@@ -63,7 +69,6 @@ public class tabButtonManager : MonoBehaviour
                 tabRect.sizeDelta = new Vector2(tabRect.sizeDelta.x * newWidth, tabRect.sizeDelta.y);
 
                 ////RESIZE BUTTONS AS WELL
-                
             }
         }
 
@@ -81,12 +86,30 @@ public class tabButtonManager : MonoBehaviour
 
         newTab.GetComponentInChildren<tabScript>().WindowName = url;
 
-        DomainStorage.addToWindows(url, newTab);
+        if (url == "www.domains.com")
+        {
+            DomainStorage.addToWindows(url, _DomainWindow);
+        }
+        else if (url == "www.trends.com")
+        {
+            DomainStorage.addToWindows(url, _TrendsWindow);
+        }
+        else if (url == "www.buydomains.com")
+        {
+            DomainStorage.addToWindows(url, _BuyWindow);
+        }
+        else
+        {
+            DomainStorage.addToWindows(url, newTab);
+        }
     }
 
     public void switchWindow(BaseEventData eventData)
     {
-        //Debug.Log(data);
-        Debug.Log(eventData.selectedObject.GetComponent<tabScript>().WindowName);
+        GameObject window = DomainStorage.getWindowFromKey(eventData.selectedObject.GetComponent<tabScript>().WindowName);
+
+        mCurrWindow.transform.position = new Vector3(mCurrWindow.transform.position.x, mCurrWindow.transform.position.y, 3); //Move curr window back
+        window.transform.position = new Vector3(window.transform.position.x, window.transform.position.y, 0);  //Move new window up
+        mCurrWindow = window;
     }
 }

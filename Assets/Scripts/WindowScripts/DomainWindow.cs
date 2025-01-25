@@ -20,8 +20,8 @@ public class DomainWindow : MonoBehaviour
 
         RectTransform domainGroupTansform = mDomainGroup.GetComponent<RectTransform>();
         RectTransform domainIDGroupTansform = mDomainIDGroup.GetComponent<RectTransform>();
-        domainGroupTansform.position = new Vector2(domainGroupTansform.position.x, -200);
-        domainIDGroupTansform.position = new Vector2(domainIDGroupTansform.position.x, -200);
+        domainGroupTansform.position = new Vector3(domainGroupTansform.position.x, -200, domainGroupTansform.position.z);
+        domainIDGroupTansform.position = new Vector3(domainIDGroupTansform.position.x, -200, domainIDGroupTansform.position.z);
     }
 
     private void createDomainText(DomainStorage.DomainInfo domainInfo, string domainID)
