@@ -42,6 +42,7 @@ public static class DomainStorage
         urls.Clear();
 
         trends = new List<string>();
+        trends.Add("None");
         trends.Add("Toys");
         trends.Add("MTV");
         trends.Add("Pop Culture");
@@ -55,332 +56,341 @@ public static class DomainStorage
 
         urls.Add(new DomainInfo("jackfrosttips.com", new string[]
         {
+            "Fashion"
+        }));
+        urls.Add(new DomainInfo("yoyoallday.com", new string[]
+        {
+            "Toys"
+        }));
+        urls.Add(new DomainInfo("mtvismylife.org", new string[]
+        {
+            "Pop Culture"
+        }));
+        urls.Add(new DomainInfo("pokerman4gamegirl.com", new string[]
+        {
+            "Video Games"
+        }));
+        urls.Add(new DomainInfo("mtvmusicdotcom.com", new string[]
+        {
             "Pop Culture"
         }));
         urls.Add(new DomainInfo("yoyoallday.com", new string[]
         {
-        
-        }));
-        urls.Add(new DomainInfo("mtvismylife.org", new string[]
-        {
-
-        }));
-        urls.Add(new DomainInfo("pokerman4gamegirl.com", new string[]
-        {
-
+            "Toys"
         }));
         urls.Add(new DomainInfo("mtvmusicdotcom.com", new string[]
         {
-
-        }));
-        urls.Add(new DomainInfo("yoyoallday.com", new string[]
-        {
-
-        }));
-        urls.Add(new DomainInfo("mtvmusicdotcom.com", new string[]
-        {
-
+            "MTV"
         }));
         urls.Add(new DomainInfo("ilovenysnc.gov", new string[]
         {
-
+            "MTV"
         }));
         urls.Add(new DomainInfo("how2fixflipphone.com", new string[]
         {
-
+            "Business"
         }));
         urls.Add(new DomainInfo("lowriderjeans4sale.com", new string[]
         {
-
+            "Fashion"
         }));
         urls.Add(new DomainInfo("80sbabies4lyfe.org", new string[]
         {
-
+            "Pop Culture"
         }));
         urls.Add(new DomainInfo("buyJNCOSnow.com", new string[]
         {
-
+            "Fashion"
         }));
         urls.Add(new DomainInfo("mytomagotchidied.com", new string[]
         {
-
+            "Video Games", "Pop Culture"
         }));
         urls.Add(new DomainInfo("thosecupswithblueandpurplescribbles.com", new string[]
         {
-
+            "Pop Culture"
         }));
         urls.Add(new DomainInfo("skateboards4posers.gov", new string[]
         {
-
+            "Toys", "Pop Culture"
         }));
         urls.Add(new DomainInfo("cheapsnapbraclets.com", new string[]
         {
-
+            "Fashion"
         }));
         urls.Add(new DomainInfo("ilovebeaniebabies.com", new string[]
         {
-
+            "Toys"
         }));
         urls.Add(new DomainInfo("coolplasticonastring.com", new string[]
         {
-
+            "Toys"
         }));
         urls.Add(new DomainInfo("coolsciencegames.com", new string[]
         {
-
+            "Video Games"
         }));
         urls.Add(new DomainInfo("fredsflops.com", new string[]
         {
-
+            "Business"
         }));
         urls.Add(new DomainInfo("lemonwire.com", new string[]
         {
-
+            "MTV"
         }));
         urls.Add(new DomainInfo("trackys4hire.org", new string[]
         {
-
+            "Fashion"
         }));
         urls.Add(new DomainInfo("ilooklikebillclinton.com", new string[]
         {
-
+            "Memes"
         }));
         urls.Add(new DomainInfo("money4beaniebabiesNOW.gov", new string[]
         {
-
+            "Toys"
         }));
         urls.Add(new DomainInfo("notaurldotcom.com", new string[]
         {
-
+            "Scams"
         }));
         urls.Add(new DomainInfo("blockbustersbutonline.com", new string[]
         {
-
+            "Business"
         }));
         urls.Add(new DomainInfo("downloadmoreram.com", new string[]
         {
-
+            "Scams"
         }));
         urls.Add(new DomainInfo("mynameisjeff.com", new string[]
         {
-
+            "Memes"
         }));
         urls.Add(new DomainInfo("crabsthattap.com", new string[]
         {
-
+            "Business"
         }));
         urls.Add(new DomainInfo("mycouchisonfire.gov", new string[]
         {
-
+            "Business"
         }));
         urls.Add(new DomainInfo("themoonischeese.org", new string[]
         {
-
+            "Conspiracy"
         }));
         urls.Add(new DomainInfo("donutearththeoryconfirmed.gov", new string[]
         {
-
+            "Conspiracy"
         }));
         urls.Add(new DomainInfo("transquilbeats2sleep2.com", new string[]
         {
-
+            "MTV"
         }));
         urls.Add(new DomainInfo("trillionawesomegames.com", new string[]
         {
-
+            "Video Games"
         }));
         urls.Add(new DomainInfo("picturesofdogswithhats.gov", new string[]
         {
-
+            "Fashion"
         }));
         urls.Add(new DomainInfo("back2thefuturefanclub.org", new string[]
         {
-
+            "Pop Culture"
         }));
         urls.Add(new DomainInfo("Swashbucklersbay.yar", new string[]
         {
-
+            "Scams"
         }));
         urls.Add(new DomainInfo("notavirus.exe", new string[]
         {
-
+            "Scams"
         }));
         urls.Add(new DomainInfo("dropshippingbeforeitwascool.com", new string[]
         {
-
+            "Business"
         }));
         urls.Add(new DomainInfo("hairspraydealer.org", new string[]
         {
-
+            "Fashion"
         }));
         urls.Add(new DomainInfo("iwannabeayoyoman.org", new string[]
         {
-
+            "Toys"
         }));
         urls.Add(new DomainInfo("keeponyoing.gov", new string[]
         {
-
+            "Toys"
         }));
         urls.Add(new DomainInfo("yoyotricks4begineers.com", new string[]
         {
-
+            "Toys"
         }));
         urls.Add(new DomainInfo("Worldwideweb.scam", new string[]
         {
-
+            "Scams"
         }));
         urls.Add(new DomainInfo("freethings.org", new string[]
         {
-
+            "Scams"
         }));
         urls.Add(new DomainInfo("webaholics.com", new string[]
         {
-
+            "Pop Culture"
         }));
         urls.Add(new DomainInfo("peanutbutterandspacejam.gov", new string[]
         {
-
+            "Pop Culture"
         }));
         urls.Add(new DomainInfo("leocities.com", new string[]
         {
-
+            "None"
         }));
         urls.Add(new DomainInfo("audioforu.org", new string[]
         {
-
+            "MTV"
         }));
         urls.Add(new DomainInfo("mycoolassstuffandthings.gov", new string[]
         {
-
+            "None"
         }));
         urls.Add(new DomainInfo("catsandthebigbang.com", new string[]
         {
-
+            "Pop Culture"
         }));
         urls.Add(new DomainInfo("frogdementia.gov", new string[]
         {
-
+            "None"
         }));
         urls.Add(new DomainInfo("blackbeardscrew.org", new string[]
         {
-
+            "Scams"
         }));
         urls.Add(new DomainInfo("tracksuitdad.gov", new string[]
         {
-
+            "Fashion"
         }));
         urls.Add(new DomainInfo("onlydads.com", new string[]
         {
-
+            "None"
         }));
         urls.Add(new DomainInfo("paradisekoolio.com", new string[]
         {
-
+            "MTV"
         }));
         urls.Add(new DomainInfo("buyrobotbirds.gov", new string[]
         {
-
+            "Conspiracy"
         }));
         urls.Add(new DomainInfo("iwillkillyourfamilyunlessyoubuythis.biz", new string[]
         {
-
+            "None"
         }));
         urls.Add(new DomainInfo("silenceofthescams.com", new string[]
         {
-
+            "Scams"
         }));
         urls.Add(new DomainInfo("downloadmoviesfree.com", new string[]
         {
-
+            "Scams"
         }));
         urls.Add(new DomainInfo("gameboytutorials.com", new string[]
         {
-
+            "Video Games"
         }));
         urls.Add(new DomainInfo("noboysallowed.com", new string[]
         {
-
+            "None"
         }));
         urls.Add(new DomainInfo("schmoogle.org", new string[]
         {
-
+            "Business", "Education"
         }));
         urls.Add(new DomainInfo("wonkipedia.org", new string[]
         {
-
+            "Business", "Education"
         }));
         urls.Add(new DomainInfo("bookface.gov", new string[]
         {
-
+            "Business"
         }));
         urls.Add(new DomainInfo("bigshotautos.org", new string[]
         {
-
+            "Scams"
         }));
         urls.Add(new DomainInfo("whycouldibeatmiketyson.org", new string[]
         {
-
+            "Memes"
         }));
         urls.Add(new DomainInfo("howtomakevideogamerips.org", new string[]
         {
-
+            "Video Games"
         }));
         urls.Add(new DomainInfo("clickthistobeabigshot.com", new string[]
         {
-
+            "Scams"
         }));
         urls.Add(new DomainInfo("kaloconservation.org", new string[]
         {
-
+            "Business"
         }));
         urls.Add(new DomainInfo("apocalypsemailteam.org", new string[]
         {
-
+            "Business"
         }));
         urls.Add(new DomainInfo("cupcakewalkaudiotutorials.com", new string[]
         {
-
+            "None"
         }));
         urls.Add(new DomainInfo("ytplumbing.org", new string[]
         {
-
+            "Memes"
         }));
         urls.Add(new DomainInfo("mildredsknittingclass.com", new string[]
         {
-
+            "Business"
         }));
         urls.Add(new DomainInfo("truthseeker69.gov", new string[]
         {
-
+            "Conspiracy"
         }));
         urls.Add(new DomainInfo("thevoidisnear.com", new string[]
         {
-
+            "Conspiracy"
         }));
         urls.Add(new DomainInfo("wesendyoumoney.org", new string[]
         {
-
+            "Scams"
         }));
         urls.Add(new DomainInfo("theelderrollsbakery.org", new string[]
         {
-
+            "Business"
         }));
         urls.Add(new DomainInfo("unclebewilderment.com", new string[]
         {
-
+            "Conspiracy"
         }));
         urls.Add(new DomainInfo("karmakmusic.com", new string[]
         {
-
+            "MTV"
         }));
         urls.Add(new DomainInfo("learningmadefun.org", new string[]
         {
-
+            "Education"
         }));
         urls.Add(new DomainInfo("123rat.org", new string[]
         {
-
+            "Education"
         }));
+        urls.Add(new DomainInfo("brainpoop.com", new string[]
+        {
+            "Education"
+        }));
+        urls.Add(new DomainInfo("nothingisreal.org", new string[]
+        {
+            "Conspiracy"
+        }));
+
 
 
         foreach (DomainInfo var in urls)
@@ -401,5 +411,6 @@ public static class DomainStorage
         {
             Debug.Log(t);
         }
+
     }
 }
