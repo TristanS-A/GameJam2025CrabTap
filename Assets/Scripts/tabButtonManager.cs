@@ -108,7 +108,7 @@ public class tabButtonManager : MonoBehaviour
     {
         GameObject window = DomainStorage.getWindowFromKey(eventData.selectedObject.GetComponent<tabScript>().WindowName);
 
-        mCurrWindow.transform.position = new Vector3(mCurrWindow.transform.position.x, mCurrWindow.transform.position.y, 3); //Move curr window back
+        mCurrWindow.transform.position = new Vector3(mCurrWindow.transform.position.x, mCurrWindow.transform.position.y, 10); //Move curr window back
         window.transform.position = new Vector3(window.transform.position.x, window.transform.position.y, 0);  //Move new window up
         mCurrWindow = window;
     }

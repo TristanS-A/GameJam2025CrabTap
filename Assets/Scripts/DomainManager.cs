@@ -19,7 +19,7 @@ public class DomainManager : MonoBehaviour
         mConfirmButton.onClick.AddListener(checkAndConfirmDomainID);
         DomainStorage.BuildUrlPacks();
         money = GameObject.FindWithTag("money").GetComponent<beanKounter>();
-        trend = GameObject.FindWithTag("trend").GetComponent<trendManager>();
+        trend = GameObject.FindWithTag("trends").GetComponent<trendManager>();
     }
 
     private void checkAndConfirmDomainID()
