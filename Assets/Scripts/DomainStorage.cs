@@ -36,11 +36,8 @@ public static class DomainStorage
         return urlIdPairs;
     }
 
-    public static void BuildUrlPacks()
+    public static List<string> createFullTrendList()
     {
-        urlIdPairs.Clear();
-        urls.Clear();
-
         trends = new List<string>();
         trends.Add("None");
         trends.Add("Toys");
@@ -53,6 +50,14 @@ public static class DomainStorage
         trends.Add("Jokes");
         trends.Add("Education");
         trends.Add("Conspiracy");
+
+        return trends;
+    }
+
+    public static void BuildUrlPacks()
+    {
+        urlIdPairs.Clear();
+        urls.Clear();
 
         urls.Add(new DomainInfo("jackfrosttips.com", new string[]
         {
@@ -391,14 +396,12 @@ public static class DomainStorage
             "Conspiracy"
         }));
 
-
-
         foreach (DomainInfo var in urls)
         {
             string piece = "";
             int randomIdPiece;
 
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i < 9; i++)
             {
                 randomIdPiece = UnityEngine.Random.Range(0, 9);
                 piece += randomIdPiece.ToString();
