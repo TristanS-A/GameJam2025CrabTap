@@ -54,4 +54,9 @@ public class timerScript : MonoBehaviour
             return (hoursLeft + ":" + secondsLeft);
         }
     }
+
+    public float getTimeElapsed()
+    {
+        return timeElapsed;
+    }
 }

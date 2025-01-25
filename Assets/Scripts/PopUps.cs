@@ -10,6 +10,7 @@ public class PopUps : MonoBehaviour
     public Texture2D[] popUpImages;
     public Canvas mainCanvas;
     public Button xButton;
+    public timerScript timerScript;
 
     private int currentRandImageIndex;
     private Vector2 imagePosition;
@@ -25,18 +26,27 @@ public class PopUps : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (timerScript.getTimeElapsed() % 10 == 0)
         {
-            currentRandImageIndex = Random.Range(0, popUpImages.Length);
-            currentImage = popUpImages[currentRandImageIndex];
-            imagePosition.x = Random.Range(-500, 400);
-            imagePosition.y = Random.Range(-150, 210);
-            rectTransform.anchoredPosition = imagePosition;
+            int popUpChance = Random.Range(0, 1);
+            if (popUpChance == 1)
+            {
+                CreatePopUp();
+            }
         }
     }
 
     void xButtonClick()
     {
         this.gameObject.transform.position = new Vector2(10000, 10000);
+    }
+
+    void CreatePopUp()
+    {
+        currentRandImageIndex = Random.Range(0, popUpImages.Length);
+        currentImage = popUpImages[currentRandImageIndex];
+        imagePosition.x = Random.Range(-500, 400);
+        imagePosition.y = Random.Range(-150, 210);
+        rectTransform.anchoredPosition = imagePosition;
     }
 }
