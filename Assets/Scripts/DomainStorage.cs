@@ -1,15 +1,14 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using UnityEngine;
 
-public class DomainStorage : MonoBehaviour
+public static class DomainStorage
 {
-    Dictionary<string, DomainInfo> urlIdPairs = new Dictionary<string, DomainInfo>();
-    List<DomainInfo> urls = new List<DomainInfo>();
-    public List<string> trends;
+    private static Dictionary<string, DomainInfo> urlIdPairs = new Dictionary<string, DomainInfo>();
+    private static List<DomainInfo> urls = new List<DomainInfo>();
+    private static List<string> trends;
 
-    struct DomainInfo
+    public struct DomainInfo
     {
         public string[] trends;
         public string url;
@@ -21,7 +20,18 @@ public class DomainStorage : MonoBehaviour
         }
     }
 
-    void Start()
+    public static Nullable<DomainInfo> getDomainInfoFromID(string id)
+    {
+        DomainInfo newInfo;
+        if (urlIdPairs.TryGetValue(id, out newInfo))
+        {
+            return newInfo;
+        }
+
+        return null;
+    }
+
+    public static void BuildUrlPacks()
     {
         urlIdPairs.Clear();
         urls.Clear();
@@ -375,12 +385,16 @@ public class DomainStorage : MonoBehaviour
 
             for (int i = 0; i < 11; i++)
             {
-                randomIdPiece = Random.Range(0, 9);
+                randomIdPiece = UnityEngine.Random.Range(0, 9);
                 piece += randomIdPiece.ToString();
             }
 
             urlIdPairs.Add(piece, var);
         }
 
+        foreach (string t in urlIdPairs.Keys)
+        {
+            Debug.Log(t);
+        }
     }
 }

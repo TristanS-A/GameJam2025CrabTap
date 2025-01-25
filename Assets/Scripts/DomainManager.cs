@@ -8,16 +8,31 @@ using TMPro;
 public class DomainManager : MonoBehaviour
 {
     [SerializeField] private TMP_InputField mInputField;
-    private event Action <string> AmOnInputEdit;
+    [SerializeField] private Button mConfirmButton;
+    private HashSet<string> mAqquiredDomains;        ///CHANGE THIS TO REMOVE ADDED DOMAINS
 
     private void Start()
     {
         mInputField.ActivateInputField();
-        //mInputField.onEndEdit.AddListener(test);
+        mConfirmButton.onClick.AddListener(checkAndConfirmDomainID);
+        DomainStorage.BuildUrlPacks();
     }
 
-//    private void test(string s)
-//    {
-//        Debug.Log(s);
-//    }
+    private void checkAndConfirmDomainID()
+    {
+        Nullable<DomainStorage.DomainInfo> possibleDomainInfo = DomainStorage.getDomainInfoFromID(mInputField.text);
+        if (possibleDomainInfo != null)
+        {
+            Debug.Log("Exists");
+            Debug.Log(possibleDomainInfo.Value.url);
+            Debug.Log(possibleDomainInfo.Value.trends);
+            ////REMOVE DOMAIN FROM DomainStorage
+            ///ADD PROFITS AND CALCULATE BASED ON TRENDS
+            ///ADD NEW TAB
+        }
+        else
+        {
+            Debug.Log("Domain does not exist");
+        }
+    }
 }
