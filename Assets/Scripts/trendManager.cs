@@ -9,18 +9,7 @@ public class trendManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        trends = new List<string>();
-        trends.Add("None");
-        trends.Add("Toys");
-        trends.Add("MTV");
-        trends.Add("Pop Culture");
-        trends.Add("Fashion");
-        trends.Add("Video Games");
-        trends.Add("Business");
-        trends.Add("Scams");
-        trends.Add("Jokes");
-        trends.Add("Education");
-        trends.Add("Conspiracy");
+        trends = DomainStorage.createFullTrendList();
     }
 
 
@@ -47,7 +36,7 @@ public class trendManager : MonoBehaviour
     public void updateTrends()
     {
         //Make sure the None trend is at the bottom
-        moveTrend("None", 10);
+        moveTrend("None", trends.Count);
         //New list to track old positions of trends
         List<string> s = trends;
         s.RemoveAt(10);

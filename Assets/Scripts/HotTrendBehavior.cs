@@ -21,7 +21,7 @@ public class HotTrendBehavior : MonoBehaviour
 
     void Update()
     {
-        if ((int)timer.getTimeElapsed() % 2 == 0)
+        if ((int)timer.getTimeElapsed() % 60 == 0)
         {
             if(timer.getStartGame())
             {
@@ -30,16 +30,21 @@ public class HotTrendBehavior : MonoBehaviour
         }
     }
 
-
-
     void FillTrends()
     {
         for (int i = 0; i < hotTrends.Length; i++)
         {
             int randIndex = Random.Range(1, allTrends.Count);
-            hotTrends[i] = allTrends[randIndex];
-            hotTrendsText[i].text = hotTrends[i];
-            alreadyUsedTrends.Add(allTrends[randIndex]);
+            if (hotTrends.Contains(allTrends[randIndex]))
+            {
+                FillTrends();
+            }
+            else
+            {
+                hotTrends[i] = allTrends[randIndex];
+                hotTrendsText[i].text = hotTrends[i];
+                alreadyUsedTrends.Add(allTrends[randIndex]);
+            }
         }
     }
 }
