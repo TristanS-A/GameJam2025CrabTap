@@ -16,6 +16,11 @@ public class moneyText : MonoBehaviour
     void Update()
     {
         playerMoney.addMonee(0.05f);
-        t.text = "$" + (Mathf.Round(playerMoney.getMonee()* 100f) / 100f).ToString();
+        string s = "$" + (Mathf.Round(playerMoney.getMonee() * 100f) / 100f).ToString();
+        if(s.Length - s.IndexOf(".") <= 2)
+        {
+            s += "0";
+        }
+        t.text = s;
     }
 }
