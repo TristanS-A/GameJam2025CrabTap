@@ -1,12 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Video;
 public class sceneMan : MonoBehaviour
 {
-    public void Start()
+    [SerializeField] private VideoPlayer vp;
+    bool startup = false;
+
+    void Start()
     {
         DontDestroyOnLoad(gameObject);
+        startup = false;
+        vp.loopPointReached += mainMenu;
+    }
+
+    void Update()
+    {
+        if(!startup)
+        {
+            //If video player is done playing
+            if(vp.frame !< Convert.ToInt64(vp.GetComponent<VideoPlayer>().frameCount))
+            {
+                startup = true;
+            }
+        }
     }
 
     public void startGame()
@@ -14,7 +34,7 @@ public class sceneMan : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    public void mainMenu()
+    public void mainMenu(UnityEngine.Video.VideoPlayer vp)
     {
         SceneManager.LoadScene("Title");
     }
