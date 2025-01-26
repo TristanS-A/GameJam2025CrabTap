@@ -18,19 +18,25 @@ public class tabButtonManager : MonoBehaviour
     [SerializeField] Button websiteTabTemplate;
     [SerializeField] Canvas canvas;
     private RectTransform tabBarRect;
-    private GameObject mCurrWindow;
 
     private List<GameObject> tabButtons = new List<GameObject>();
 
     private void OnEnable()
     {
         eventSystem.newTab += addTab;
+        eventSystem.removeTab += removeTab;
+    }
+
+    private void OnDisable()
+    {
+        eventSystem.newTab -= addTab;
+        eventSystem.removeTab -= removeTab;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        mCurrWindow = _DomainWindow;
+        DomainStorage.CurrWindow = _DomainWindow;
 
         tabBarRect = GetComponent<RectTransform>();
         addTab("Domains", "www.domains.com");
@@ -160,15 +166,59 @@ public class tabButtonManager : MonoBehaviour
         addTab(url, url);
     }
 
+    public void removeTab(string url)
+    {
+        Debug.Log(url);
+        float totalTabLength = 0;
+        int indexToRemoveAt = -1;
+        for (int i = 0; i < tabButtons.Count; i++)
+        {
+            if (tabButtons[i].GetComponentInChildren<tabScript>().WindowName != url)
+            {
+                RectTransform tabRect = tabButtons[i].GetComponent<RectTransform>();
+                totalTabLength += tabRect.sizeDelta.x * tabRect.localScale.x;
+            }
+            else
+            {
+                indexToRemoveAt = i;
+            }
+        }
+
+        if (indexToRemoveAt != -1)
+        {
+            GameObject oldTab = tabButtons[indexToRemoveAt];
+            tabButtons.RemoveAt(indexToRemoveAt);
+            Destroy(oldTab);
+
+            float newWidth = tabBarRect.sizeDelta.x / totalTabLength;
+
+            foreach (GameObject tabOBJ in tabButtons)
+            {
+                RectTransform tabRect = tabOBJ.GetComponent<RectTransform>();
+                RectTransform buttonTabRect = tabOBJ.GetComponentInChildren<Button>().gameObject.GetComponent<RectTransform>();
+                RectTransform buttonTextRect = buttonTabRect.gameObject.GetComponentInChildren<TextMeshProUGUI>().gameObject.GetComponent<RectTransform>();
+                tabRect.sizeDelta = new Vector2(tabRect.sizeDelta.x * newWidth, tabRect.sizeDelta.y);
+                buttonTabRect.sizeDelta = new Vector2(buttonTabRect.sizeDelta.x * newWidth, buttonTabRect.sizeDelta.y);
+
+                float width = buttonTextRect.sizeDelta.x;
+                buttonTextRect.sizeDelta = new Vector2(buttonTextRect.sizeDelta.x * newWidth, buttonTextRect.sizeDelta.y);
+                width = buttonTextRect.sizeDelta.x - width;
+                buttonTextRect.localPosition += new Vector3(width * 0.5f, 0, 0);
+            }
+
+            float t = repositionTabs();
+        }
+    }
+
     public void switchWindow(BaseEventData eventData)
     {
         if (eventData.selectedObject != null)
         {
             GameObject window = DomainStorage.getWindowFromKey(eventData.selectedObject.GetComponent<tabScript>().WindowName);
 
-            mCurrWindow.transform.position = new Vector3(mCurrWindow.transform.position.x, mCurrWindow.transform.position.y, 10); //Move curr window back
+            DomainStorage.CurrWindow.transform.position = new Vector3(DomainStorage.CurrWindow.transform.position.x, DomainStorage.CurrWindow.transform.position.y, 10); //Move curr window back
             window.transform.position = new Vector3(window.transform.position.x, window.transform.position.y, 0);  //Move new window up
-            mCurrWindow = window;
+            DomainStorage.CurrWindow = window;
         }
     }
 }

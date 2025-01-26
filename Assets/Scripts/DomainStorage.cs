@@ -11,7 +11,8 @@ public static class DomainStorage
     private static List<DomainInfo> urls = new List<DomainInfo>();
     private static List<string> trends;
     private static string[] hotTrends = new string[3];
-    
+    private static GameObject mCurrWindow;
+
     public struct DomainInfo
     {
         public string[] trends;
@@ -28,6 +29,12 @@ public static class DomainStorage
     {
         get { return hotTrends; }
         set { hotTrends = value; }
+    }
+
+    public static GameObject CurrWindow
+    {
+        get { return mCurrWindow; }
+        set { mCurrWindow = value; }
     }
 
     public static Nullable<DomainInfo> getDomainInfoFromID(string id)

@@ -51,7 +51,7 @@ public class DomainManager : MonoBehaviour
             ///ADD PROFITS AND CALCULATE BASED ON TRENDS    AND URL COST
             playerMoneyHandler.PlayerMoney -= 0.05f; //SHOULD SUBTRACT BY URL COST
             eventSystem.fireEvent(new NewTabEvent(possibleDomainInfo.Value.url));
-            Website newWebsite = DomainStorage.getWindowFromKey(possibleDomainInfo.Value.url).AddComponent<Website>();
+            Website newWebsite = DomainStorage.getWindowFromKey(possibleDomainInfo.Value.url).GetComponent<Website>();
             newWebsite.urlID = mInputField.text;
         }
         else

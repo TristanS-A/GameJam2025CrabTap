@@ -6,6 +6,7 @@ using UnityEngine;
 public static class eventSystem
 {
     public static event Action<string> errorMessage;
+    public static event Action<string> removeTab;
     public static event Action<string, string> newTab;
     public static event Action endGame;
 
@@ -20,6 +21,10 @@ public static class eventSystem
             case eventType.EventTypes.NEW_TAB:
                 NewTabEvent tabEvent = (NewTabEvent)(type);
                 newTab.Invoke(tabEvent.getURL(), tabEvent.getURL());
+                break;
+            case eventType.EventTypes.REMOVE_TAB:
+                RemoveTabEvent removeTabEvent = (RemoveTabEvent)(type);
+                removeTab.Invoke(removeTabEvent.getURL());
                 break;
             case eventType.EventTypes.END_GAME:
                 endGame.Invoke();

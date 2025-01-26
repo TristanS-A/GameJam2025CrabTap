@@ -9,6 +9,7 @@ public class eventType
     {
         ERROR_MESSAGE,
         NEW_TAB,
+        REMOVE_TAB,
         END_GAME
     }
 
