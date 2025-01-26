@@ -61,7 +61,8 @@ public class DomainManager : MonoBehaviour
                 f *= getTop3Mult(possibleDomainInfo.Value.trends);
             }
             money.addMonee(f);
-            ///ADD NEW TAB
+
+            eventSystem.fireEvent(new NewTabEvent(possibleDomainInfo.Value.url));
         }
         else
         {

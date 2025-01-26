@@ -11,6 +11,8 @@ public class tabButtonManager : MonoBehaviour
     [SerializeField] private GameObject _DomainWindow;
     [SerializeField] private GameObject _TrendsWindow;
     [SerializeField] private GameObject _BuyWindow;
+    [SerializeField] private GameObject m_WindowDefault;
+    [SerializeField] private GameObject m_WindowSpawner;
     public List<Button> purchasedDomains;
     [SerializeField] Button websiteTabTemplate;
     [SerializeField] Canvas canvas;
@@ -19,17 +21,29 @@ public class tabButtonManager : MonoBehaviour
 
     private List<GameObject> tabButtons = new List<GameObject>();
 
+    private void OnEnable()
+    {
+        eventSystem.newTab += addTab;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         mCurrWindow = _DomainWindow;
 
         tabBarRect = GetComponent<RectTransform>();
-        addTab("Hello", "www.domains.com");
-        addTab("Hello", "www.trends.com");
-        addTab("Hello", "www.buydomains.com");
-        addTab("Hello", "wwwwww");
-        addTab("End", "wew");
+        addTab("Domains", "www.domains.com");
+        addTab("Trends", "www.trends.com");
+        addTab("Buy", "www.buydomains.com");
+        addTab("Buy", "www.buydomaains.com");
+        addTab("Buy", "www.buydomasins.com");
+        addTab("Buy", "www.buydomasains.com");
+        addTab("Buy", "www.buydoamains.com");
+        addTab("Buy", "www.buydoasdmains.com");
+        addTab("Buy", "www.bsasuydomains.com");
+        addTab("Buy", "www.buydoasmains.com");
+        addTab("Buy", "www.buydoasmains.com");
+        addTab("Buy", "www.buydomsaains.com");
     }
 
     // Update is called once per frame
@@ -100,7 +114,8 @@ public class tabButtonManager : MonoBehaviour
         }
         else
         {
-            DomainStorage.addToWindows(url, newTab);
+            GameObject newWindow = Instantiate(m_WindowDefault, m_WindowSpawner.transform);
+            DomainStorage.addToWindows(url, newWindow);
         }
     }
 
