@@ -64,4 +64,19 @@ public class soundManager : MonoBehaviour
     {
         children[i + 1].Play();
     }
+
+    private void Update()
+    {
+        if(Input.anyKeyDown)
+        {
+            if(Input.GetMouseButtonDown(0) ||  Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
+            {
+                playSFX(Random.Range(10, 14));
+            }
+            else
+            {
+                playSFX(Random.Range(2, 10));
+            }
+        }
+    }
 }
