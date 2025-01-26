@@ -28,6 +28,6 @@ public class errorSpawner : MonoBehaviour
 
     private void spawnEndOfGamePopup()
     {
-        Instantiate(m_EndOfGamePopup, transform);
+        Instantiate(m_EndOfGamePopup);
     }
 }

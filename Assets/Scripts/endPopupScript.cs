@@ -35,7 +35,7 @@ public class endPopupScript : MonoBehaviour
 
     private void setText()
     {
-        mMoneyText.text = "You made $" + (playerMoneyHandler.PlayerMoney - playerMoneyHandler.mStartingMoney);
+        mMoneyText.text = "You made $" + (playerMoneyHandler.PlayerMoney - playerMoneyHandler.mStartingMoney).ToString("0.00");
         mSitesText.text = "Domains Bought: " + DomainStorage.getBoughtDomainDictionary().Count;
     }
 
