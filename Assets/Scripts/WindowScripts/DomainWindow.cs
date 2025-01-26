@@ -15,6 +15,8 @@ public class DomainWindow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DomainStorage.reset();
+        playerMoneyHandler.reset();
         DomainStorage.BuildUrlPacks();
         DomainStorage.createFullTrendList();
         loadBGs();

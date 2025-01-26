@@ -12,4 +12,9 @@ public static class playerMoneyHandler
         get { return mPlayerMoney; }
         set { mPlayerMoney = value; }
     }
+
+    public static void reset()
+    {
+        mPlayerMoney = mStartingMoney;
+    }
 }

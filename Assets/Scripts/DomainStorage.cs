@@ -11,7 +11,6 @@ public static class DomainStorage
     private static List<string> trends;
     private static string[] hotTrends = new string[3];
     private static GameObject mCurrWindow;
-    private static timerScript mMainTimer;
 
     public struct DomainInfo
     {
@@ -27,6 +26,13 @@ public static class DomainStorage
             this.price = 0.50f;
             this.bg = null;
         }
+    }
+
+    public static void reset()
+    {
+        urlIdPairs.Clear();
+        baughtURLs.Clear();
+        windows.Clear();
     }
 
     public static string[] HotTrends

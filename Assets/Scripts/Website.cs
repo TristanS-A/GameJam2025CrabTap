@@ -30,6 +30,22 @@ public class Website : MonoBehaviour
             initialTrendVal = getTop3Mult(trends);
         }
 
+        if (initialTrendVal <= 1)
+        {
+            soundManager.Instance.playSFX(0);
+        }
+        else if (initialTrendVal <= 2.5)
+        {
+            soundManager.Instance.playSFX(0);
+            StartCoroutine(Co_MakeSound(0.2f));
+        }
+        else if (initialTrendVal > 2.5)
+        {
+            soundManager.Instance.playSFX(0);
+            StartCoroutine(Co_MakeSound(0.2f));
+            StartCoroutine(Co_MakeSound(0.4f));
+        }
+
         timer = GameObject.FindWithTag("Timer").GetComponent<timerScript>();
 
         mSellButton.onClick.AddListener(sellWebsite);
@@ -86,7 +102,14 @@ public class Website : MonoBehaviour
 
         playerMoneyHandler.PlayerMoney += siteProfits;
 
+        //soundManager.Instance.playSFX();
         eventSystem.fireEvent(new RemoveTabEvent(DomainStorage.getBoughtDomainInfoFromID(urlID).Value.url));
         Destroy(gameObject);
+    }
+
+    private IEnumerator Co_MakeSound(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        soundManager.Instance.playSFX(0);
     }
 }
