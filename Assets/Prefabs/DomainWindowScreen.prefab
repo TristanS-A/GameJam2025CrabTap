@@ -730,6 +730,17 @@ MonoBehaviour:
   mDomainGroup: {fileID: 7071205695346949502}
   mDomainIDGroup: {fileID: 4022870965926489030}
   font: {fileID: 11400000, guid: b8e4e408cfa69cd41829a051d0870df3, type: 2}
+  siteBGs:
+  - {fileID: 21300000, guid: 7dcaf3cc3a974cb4c99763117739fcd0, type: 3}
+  - {fileID: 21300000, guid: 67e57a88b7338724ca8b18e25cec5b93, type: 3}
+  - {fileID: 21300000, guid: ce804136173810943affb3eb3997607a, type: 3}
+  - {fileID: 21300000, guid: 89d1536ee1f302e48926b9b032da9079, type: 3}
+  - {fileID: 21300000, guid: f316e8807cde88644a8e08633a693502, type: 3}
+  - {fileID: 21300000, guid: 8014f2d4ec2f20a40aadae5472cc89a4, type: 3}
+  - {fileID: 21300000, guid: 22ed6d8ddd65ad94e8bad1b4ff9f8a43, type: 3}
+  - {fileID: 21300000, guid: f1700923c0deb7d49965f8cad7856f87, type: 3}
+  - {fileID: 21300000, guid: 41afcaae63bd9cd4693859982d2e2f93, type: 3}
+  - {fileID: 21300000, guid: 182ae54d9cc55ce439c8daa3ce7d43c7, type: 3}
 --- !u!1 &8771078856444589158
 GameObject:
   m_ObjectHideFlags: 0

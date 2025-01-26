@@ -18,7 +18,7 @@ public class HotTrendBehavior : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(randNum);
+        randNum = Random.Range(30, 50);
         allTrends = DomainStorage.createFullTrendList();
         FillTrends();
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
@@ -9,11 +10,14 @@ public class DomainWindow : MonoBehaviour
     [SerializeField] private GameObject mDomainGroup;
     [SerializeField] private GameObject mDomainIDGroup;
     [SerializeField] public TMP_FontAsset font;
+    [SerializeField] private Sprite[] siteBGs;
 
     // Start is called before the first frame update
     void Start()
     {
         DomainStorage.BuildUrlPacks();
+        DomainStorage.createFullTrendList();
+        loadBGs();
         foreach (string domainID in DomainStorage.getDomainInfoList().Keys)
         {
             DomainStorage.DomainInfo domainInfo = (DomainStorage.DomainInfo)DomainStorage.getDomainInfoFromID(domainID);
@@ -67,5 +71,65 @@ public class DomainWindow : MonoBehaviour
         newDomainPriceOBJ.transform.SetParent(newDomainOBJ.transform);
 
         newDomainOBJ.transform.SetParent(mDomainGroup.transform);
+    }
+
+    private void loadBGs()
+    {
+        var domains = DomainStorage.getDomainInfoList();
+        for (int i = 0; i < domains.Count; i++)
+        {
+            DomainStorage.DomainInfo info = DomainStorage.getDomainInfoFromID(domains.ElementAt(i).Key).Value;
+
+            if (info.trends[0] == DomainStorage.getAllTRends()[1]) //Toys
+            {
+                info.bg = siteBGs[0];
+                DomainStorage.setDomainInfoFromID(domains.ElementAt(i).Key, info);
+            }
+            else if (info.trends[0] == DomainStorage.getAllTRends()[2]) //MTV
+            {
+                info.bg = siteBGs[1];
+                DomainStorage.setDomainInfoFromID(domains.ElementAt(i).Key, info);
+            }
+            else if (info.trends[0] == DomainStorage.getAllTRends()[3]) //Pop Culture
+            {
+                info.bg = siteBGs[2];
+                DomainStorage.setDomainInfoFromID(domains.ElementAt(i).Key, info);
+            }
+            else if (info.trends[0] == DomainStorage.getAllTRends()[4]) //Fashion
+            {
+                info.bg = siteBGs[3];
+                DomainStorage.setDomainInfoFromID(domains.ElementAt(i).Key, info);
+            }
+            else if (info.trends[0] == DomainStorage.getAllTRends()[5]) //Video Games
+            {
+                info.bg = siteBGs[4];
+                DomainStorage.setDomainInfoFromID(domains.ElementAt(i).Key, info);
+            }
+            else if (info.trends[0] == DomainStorage.getAllTRends()[6]) //Business
+            {
+                info.bg = siteBGs[5];
+                DomainStorage.setDomainInfoFromID(domains.ElementAt(i).Key, info);
+            }
+            else if (info.trends[0] == DomainStorage.getAllTRends()[7]) //Scams
+            {
+                info.bg = siteBGs[6];
+                DomainStorage.setDomainInfoFromID(domains.ElementAt(i).Key, info);
+            }
+            else if (info.trends[0] == DomainStorage.getAllTRends()[8]) //Jokes
+            {
+                info.bg = siteBGs[7];
+                DomainStorage.setDomainInfoFromID(domains.ElementAt(i).Key, info);
+            }
+            else if (info.trends[0] == DomainStorage.getAllTRends()[9]) //Education
+            {
+                info.bg = siteBGs[8];
+                DomainStorage.setDomainInfoFromID(domains.ElementAt(i).Key, info);
+            }
+            else if (info.trends[0] == DomainStorage.getAllTRends()[10]) //Conspiracy
+            {
+                info.bg = siteBGs[9];
+                DomainStorage.setDomainInfoFromID(domains.ElementAt(i).Key, info);
+            }
+        }
     }
 }

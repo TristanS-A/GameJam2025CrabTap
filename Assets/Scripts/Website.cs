@@ -9,6 +9,7 @@ public class Website : MonoBehaviour
 {
     [SerializeField] private Button mSellButton;
     [SerializeField] private TextMeshProUGUI mSellText;
+    [SerializeField] private Image bg;
     public timerScript timer;
     public HotTrendBehavior hotTrendBehavior;
     public beanKounter money;
@@ -22,6 +23,7 @@ public class Website : MonoBehaviour
     {
         baseValue = 0.001f;
         trends = DomainStorage.getBoughtDomainInfoFromID(urlID).Value.trends;
+        bg.sprite = DomainStorage.getBoughtDomainInfoFromID(urlID).Value.bg;
         for (int i = 0; i < trends.Length; i++)
         {
             initialTrendVal = getTop3Mult(trends);

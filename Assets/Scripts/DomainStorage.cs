@@ -19,12 +19,14 @@ public static class DomainStorage
         public string[] trends;
         public string url;
         public float price;
+        public Sprite bg;
 
         public DomainInfo(string url, string[] trends)
         {
             this.url = url;
             this.trends = trends;
             this.price = 0.50f;
+            this.bg = null;
         }
     }
 
@@ -49,6 +51,15 @@ public static class DomainStorage
         }
 
         return null;
+    }
+
+    public static void setDomainInfoFromID(string id, DomainInfo newInfo)
+    {
+        if (urlIdPairs.ContainsKey(id))
+        {
+            urlIdPairs.Remove(id);
+            urlIdPairs.Add(id, newInfo);
+        }
     }
 
     public static Dictionary<string, DomainInfo> getDomainInfoList()
@@ -120,6 +131,11 @@ public static class DomainStorage
         trends.Add("Education");
         trends.Add("Conspiracy");
 
+        return trends;
+    }
+
+    public static List<string> getAllTRends()
+    {
         return trends;
     }
 
