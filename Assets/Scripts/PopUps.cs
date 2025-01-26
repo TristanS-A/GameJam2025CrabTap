@@ -11,7 +11,6 @@ public class PopUps : MonoBehaviour
     public Canvas mainCanvas;
     public Button xButton;
     public timerScript timerScript;
-    public Canvas secondPopUp;
 
     private int currentRandImageIndex;
     private Vector2 imagePosition;
@@ -25,7 +24,6 @@ public class PopUps : MonoBehaviour
         gameObject.GetComponent<Image>().sprite = currentImage;
         xButton.onClick.AddListener(xButtonClick);
         rectTransform = this.GetComponent<RectTransform>();
-        secondPopUp.gameObject.SetActive(false);
     }
 
     void Update()
@@ -51,10 +49,6 @@ public class PopUps : MonoBehaviour
                     Debug.Log("missed chance");
                 }
             }
-        }
-        if ((int)timerScript.getTimeElapsed() % 180 == 0)
-        {
-            secondPopUp.gameObject.SetActive(true);
         }
     }
 
