@@ -12,6 +12,7 @@ public static class DomainStorage
     private static List<string> trends;
     private static string[] hotTrends = new string[3];
     private static GameObject mCurrWindow;
+    private static timerScript mMainTimer;
 
     public struct DomainInfo
     {
