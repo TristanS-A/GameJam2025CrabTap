@@ -11,6 +11,7 @@ public class errorScript : MonoBehaviour
 
     private void Start()
     {
+        soundManager.Instance.playSFX(1);
         destroyButton.onClick.AddListener(deletePopup);
     }
 
