@@ -32,7 +32,7 @@ public class timerScript : MonoBehaviour
             if (timeElapsed <= 0)
             {
                 startGame = false;
-                Debug.Log("DONE");
+                eventSystem.fireEvent(new eventType(eventType.EventTypes.END_GAME));
             }
             else
             {

@@ -31,7 +31,7 @@ public class sceneMan : MonoBehaviour
 
     public void startGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Game 2");
     }
 
     public void mainMenu(UnityEngine.Video.VideoPlayer vp)

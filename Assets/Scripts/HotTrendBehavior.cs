@@ -41,6 +41,7 @@ public class HotTrendBehavior : MonoBehaviour
             }
             else
             {
+                DomainStorage.HotTrends[i] = allTrends[randIndex];
                 hotTrends[i] = allTrends[randIndex];
                 hotTrendsText[i].text = hotTrends[i];
                 alreadyUsedTrends.Add(allTrends[randIndex]);

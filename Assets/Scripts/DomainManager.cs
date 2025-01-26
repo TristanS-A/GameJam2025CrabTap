@@ -13,7 +13,6 @@ public class DomainManager : MonoBehaviour
     private List<Website> mAqquiredDomains;        ///CHANGE THIS TO REMOVE ADDED DOMAINS
     private beanKounter money;
     private trendManager trend;
-    public Website website;
 
     private void Start()
     {
@@ -33,15 +32,12 @@ public class DomainManager : MonoBehaviour
             Debug.Log(possibleDomainInfo.Value.trends);
             ////REMOVE DOMAIN FROM DomainStorage
             DomainStorage.removeID(mInputField.text);
-            ///ADD PROFITS AND CALCULATE BASED ON TRENDS
-            money.subtractMonee(0.05f);
-            float f = 0.20f;
-            for(int i = 0; i < possibleDomainInfo.Value.trends.Length; i++)
-            {
-                f *= website.getTop3Mult(possibleDomainInfo.Value.trends);
-            }
-            money.addMonee(f);
+            DomainStorage.addToBoughtURLs(mInputField.text, (DomainStorage.DomainInfo)possibleDomainInfo);
+            ///ADD PROFITS AND CALCULATE BASED ON TRENDS    AND URL COST
+            playerMoneyHandler.PlayerMoney -= 0.05f; //SHOULD SUBTRACT BY URL COST
             eventSystem.fireEvent(new NewTabEvent(possibleDomainInfo.Value.url));
+            Website newWebsite = DomainStorage.getWindowFromKey(possibleDomainInfo.Value.url).AddComponent<Website>();
+            newWebsite.urlID = mInputField.text;
         }
         else
         {

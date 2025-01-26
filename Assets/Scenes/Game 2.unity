@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 400263790}
   m_Layer: 5
   m_Name: Timer
-  m_TagString: Untagged
+  m_TagString: Timer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -889,6 +889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ErrorPopup: {fileID: 5910551585824794755, guid: 37aa5b55800643f4ba4c017b43e8315b, type: 3}
+  m_EndOfGamePopup: {fileID: 3119915017578742910, guid: c222164591fe89647844f58e411e4fdc, type: 3}
 --- !u!1 &1602271905
 GameObject:
   m_ObjectHideFlags: 0

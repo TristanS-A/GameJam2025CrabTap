@@ -8,12 +8,20 @@ public class Website : MonoBehaviour
     public timerScript timer;
     public HotTrendBehavior hotTrendBehavior;
     public beanKounter money;
-    float trendMulti;
-    float baseValue;
+    public float trendMulti;
+    public float baseValue;
+    public string urlID;
 
     void Start()
     {
-        baseValue = 0.1f;
+        baseValue = 0.01f;
+        string[] trends = DomainStorage.getBoughtDomainInfoFromID(urlID).Value.trends;
+        for (int i = 0; i < trends.Length; i++)
+        {
+            trendMulti = getTop3Mult(trends);
+        }
+
+        timer = GameObject.FindWithTag("Timer").GetComponent<timerScript>();
     }
 
     void Update()
@@ -22,8 +30,9 @@ public class Website : MonoBehaviour
         {
             if (timer.getStartGame())
             {
-                baseValue *= getTop3Mult(hotTrendBehavior.GetHotTrends());
-                money.addMonee(baseValue);
+                float trendVal = getTop3Mult(DomainStorage.HotTrends);
+                Debug.Log(trendVal);
+                playerMoneyHandler.PlayerMoney += baseValue * trendVal;
             }
         }
     }

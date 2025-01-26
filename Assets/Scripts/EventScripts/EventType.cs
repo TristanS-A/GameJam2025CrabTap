@@ -8,7 +8,8 @@ public class eventType
     public enum EventTypes
     {
         ERROR_MESSAGE,
-        NEW_TAB
+        NEW_TAB,
+        END_GAME
     }
 
     private EventTypes _type;

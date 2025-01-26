@@ -149,12 +149,20 @@ public class tabButtonManager : MonoBehaviour
         }
     }
 
+    public void addMoneyMakingTab(string url, float baseVal, float trendVal) 
+    {
+        addTab(url, url);
+    }
+
     public void switchWindow(BaseEventData eventData)
     {
-        GameObject window = DomainStorage.getWindowFromKey(eventData.selectedObject.GetComponent<tabScript>().WindowName);
+        if (eventData.selectedObject != null)
+        {
+            GameObject window = DomainStorage.getWindowFromKey(eventData.selectedObject.GetComponent<tabScript>().WindowName);
 
-        mCurrWindow.transform.position = new Vector3(mCurrWindow.transform.position.x, mCurrWindow.transform.position.y, 10); //Move curr window back
-        window.transform.position = new Vector3(window.transform.position.x, window.transform.position.y, 0);  //Move new window up
-        mCurrWindow = window;
+            mCurrWindow.transform.position = new Vector3(mCurrWindow.transform.position.x, mCurrWindow.transform.position.y, 10); //Move curr window back
+            window.transform.position = new Vector3(window.transform.position.x, window.transform.position.y, 0);  //Move new window up
+            mCurrWindow = window;
+        }
     }
 }
