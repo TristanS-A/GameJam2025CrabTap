@@ -464,15 +464,16 @@ public static class DomainStorage
         {
             "Conspiracy"
         }));
+        string alfabet = "abcdefghijklmnopqrstuvwxyz1234567890";
 
         foreach (DomainInfo var in urls)
         {
             string piece = "";
-            int randomIdPiece;
+            char randomIdPiece;
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
-                randomIdPiece = UnityEngine.Random.Range(0, 9);
+                randomIdPiece = alfabet[UnityEngine.Random.Range(0,alfabet.Length)];
                 piece += randomIdPiece.ToString();
             }
 
