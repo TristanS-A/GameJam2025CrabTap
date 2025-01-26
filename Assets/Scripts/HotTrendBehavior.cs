@@ -21,7 +21,7 @@ public class HotTrendBehavior : MonoBehaviour
 
     void Update()
     {
-        if ((int)timer.getTimeElapsed() % 60 == 0)
+        if ((int)timer.getTimeElapsed() % 10 == 0)
         {
             if(timer.getStartGame())
             {

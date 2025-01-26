@@ -11,6 +11,7 @@ public class tabButtonManager : MonoBehaviour
     [SerializeField] private GameObject _DomainWindow;
     [SerializeField] private GameObject _TrendsWindow;
     [SerializeField] private GameObject _BuyWindow;
+    [SerializeField] private GameObject _ClockWindow;
     [SerializeField] private GameObject m_WindowDefault;
     [SerializeField] private GameObject m_WindowSpawner;
     public List<Button> purchasedDomains;
@@ -35,6 +36,7 @@ public class tabButtonManager : MonoBehaviour
         addTab("Domains", "www.domains.com");
         addTab("Trends", "www.trends.com");
         addTab("Buy", "www.buydomains.com");
+        addTab("Clock", "www.clock.com");
     }
 
     // Update is called once per frame
@@ -141,6 +143,10 @@ public class tabButtonManager : MonoBehaviour
         else if (url == "www.buydomains.com")
         {
             DomainStorage.addToWindows(url, _BuyWindow);
+        }
+        else if (url == "www.clock.com")
+        {
+            DomainStorage.addToWindows(url, _ClockWindow);
         }
         else
         {

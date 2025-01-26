@@ -4,8 +4,9 @@ using UnityEngine;
 
 public static class playerMoneyHandler
 {
-    private static float mPlayerMoney = 1.0f;
-    
+    public static float mStartingMoney = 1.0f;
+    private static float mPlayerMoney = mStartingMoney;
+
     public static float PlayerMoney
     {
         get { return mPlayerMoney; }

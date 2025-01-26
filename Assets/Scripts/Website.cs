@@ -11,11 +11,12 @@ public class Website : MonoBehaviour
     public float trendMulti;
     public float baseValue;
     public string urlID;
+    string[] trends;
 
     void Start()
     {
-        baseValue = 0.01f;
-        string[] trends = DomainStorage.getBoughtDomainInfoFromID(urlID).Value.trends;
+        baseValue = 0.001f;
+        trends = DomainStorage.getBoughtDomainInfoFromID(urlID).Value.trends;
         for (int i = 0; i < trends.Length; i++)
         {
             trendMulti = getTop3Mult(trends);
@@ -24,13 +25,17 @@ public class Website : MonoBehaviour
         timer = GameObject.FindWithTag("Timer").GetComponent<timerScript>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if ((int)timer.getTimeElapsed() % 10 == 0)
+        if ((int)timer.getTimeElapsed() % 15 == 0)
         {
             if (timer.getStartGame())
             {
-                float trendVal = getTop3Mult(DomainStorage.HotTrends);
+                float trendVal = 0;
+                for (int i = 0; i < trends.Length; i++)
+                {
+                    trendVal = getTop3Mult(trends);
+                }
                 Debug.Log(trendVal);
                 playerMoneyHandler.PlayerMoney += baseValue * trendVal;
             }
@@ -39,6 +44,9 @@ public class Website : MonoBehaviour
 
     public float getTop3Mult(string[] trends)
     {
+        Debug.Log(DomainStorage.HotTrends[0]);
+        Debug.Log(DomainStorage.HotTrends[1]);
+        Debug.Log(DomainStorage.HotTrends[2]);
         trendMulti = 1f;
         foreach (string trend in trends)
         {

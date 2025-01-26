@@ -14,6 +14,21 @@ public class DomainManager : MonoBehaviour
     private beanKounter money;
     private trendManager trend;
 
+    private void OnEnable()
+    {
+        eventSystem.endGame += dissableInput;
+    }
+
+    private void OnDisable()
+    {
+        eventSystem.endGame -= dissableInput;
+    }
+
+    private void dissableInput()
+    {
+        mInputField.enabled = false;
+    }
+
     private void Start()
     {
         mInputField.ActivateInputField();
