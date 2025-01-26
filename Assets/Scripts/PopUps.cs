@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PopUps : MonoBehaviour
 {
     public RectTransform rectTransform;
+    public RectTransform borderRect;
     public Sprite[] popUpImages;
     public Canvas mainCanvas;
     public Button xButton;
@@ -65,5 +66,6 @@ public class PopUps : MonoBehaviour
         imagePosition.x = Random.Range(-500, 400);
         imagePosition.y = Random.Range(-150, 210);
         rectTransform.anchoredPosition = imagePosition;
+        borderRect.anchoredPosition = imagePosition;
     }
 }
