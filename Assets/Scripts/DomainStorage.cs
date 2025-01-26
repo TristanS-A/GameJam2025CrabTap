@@ -469,7 +469,7 @@ public static class DomainStorage
             string piece = "";
             int randomIdPiece;
 
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 7; i++)
             {
                 randomIdPiece = UnityEngine.Random.Range(0, 9);
                 piece += randomIdPiece.ToString();
