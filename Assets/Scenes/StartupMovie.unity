@@ -357,7 +357,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   song: {fileID: 8300000, guid: 0970d59f40774904683c2bf704f21dca, type: 3}
-  sfx: []
+  sfx:
+  - {fileID: 8300000, guid: 8141286f938cc37458a2535cae6b2542, type: 3}
+  - {fileID: 8300000, guid: eac7c6bfc98f2604d970deb433f0e179, type: 3}
+  - {fileID: 8300000, guid: 73e643d457ab19e42b7bec8c2219c2f2, type: 3}
+  - {fileID: 8300000, guid: 1e12094e41e91a64cb60b3af6fda95bd, type: 3}
   children: []
 --- !u!4 &1604361287
 Transform:
