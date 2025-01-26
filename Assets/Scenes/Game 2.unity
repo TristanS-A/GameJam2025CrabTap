@@ -260,8 +260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.02, y: 235.2}
-  m_SizeDelta: {x: 845.56, y: 50}
+  m_AnchoredPosition: {x: -27, y: 235.2}
+  m_SizeDelta: {x: 735.52, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164441775
 MonoBehaviour:
@@ -279,6 +279,8 @@ MonoBehaviour:
   _DomainWindow: {fileID: 1116086657}
   _TrendsWindow: {fileID: 726643605}
   _BuyWindow: {fileID: 2051802838}
+  m_WindowDefault: {fileID: 4022336912326621043, guid: 850f8f770bb98904fb0750f83f1e0375, type: 3}
+  m_WindowSpawner: {fileID: 232620799}
   purchasedDomains: []
   websiteTabTemplate: {fileID: 0}
   canvas: {fileID: 0}

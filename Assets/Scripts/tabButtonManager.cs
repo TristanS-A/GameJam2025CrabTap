@@ -35,15 +35,6 @@ public class tabButtonManager : MonoBehaviour
         addTab("Domains", "www.domains.com");
         addTab("Trends", "www.trends.com");
         addTab("Buy", "www.buydomains.com");
-        addTab("Buy", "www.buydomaains.com");
-        addTab("Buy", "www.buydomasins.com");
-        addTab("Buy", "www.buydomasains.com");
-        addTab("Buy", "www.buydoamains.com");
-        addTab("Buy", "www.buydoasdmains.com");
-        addTab("Buy", "www.bsasuydomains.com");
-        addTab("Buy", "www.buydoasmains.com");
-        addTab("Buy", "www.buydoasmains.com");
-        addTab("Buy", "www.buydomsaains.com");
     }
 
     // Update is called once per frame
@@ -55,6 +46,21 @@ public class tabButtonManager : MonoBehaviour
     public void toWebsite()
     {
 
+    }
+
+    private float repositionTabs()
+    {
+        float startPos = (-(int)(tabBarRect.sizeDelta.x / 2));
+
+        for (int i = 0; i < tabButtons.Count; i++)
+        {
+            RectTransform tabRect = tabButtons[i].GetComponent<RectTransform>();
+            tabRect.localPosition = new Vector2(startPos, 0);
+
+            startPos += tabRect.sizeDelta.x * tabRect.localScale.x;
+        }
+
+        return 0;
     }
 
     //Function to add a new button
@@ -73,6 +79,28 @@ public class tabButtonManager : MonoBehaviour
             totalTabLength += tabRect.sizeDelta.x * tabRect.localScale.x;
         }
 
+
+        newTabPos += new Vector2(totalTabLength, 0);
+
+        if (tabButtons.Count > 0)
+        {
+            newTabRect.sizeDelta = new Vector2(tabButtons[0].GetComponent<RectTransform>().sizeDelta.x, newTabRect.sizeDelta.y);
+
+            RectTransform buttonTabRect = newTab.GetComponentInChildren<Button>().gameObject.GetComponent<RectTransform>();
+            buttonTabRect.sizeDelta = new Vector2(tabButtons[0].GetComponentInChildren<Button>().gameObject.GetComponent<RectTransform>().sizeDelta.x, buttonTabRect.sizeDelta.y);
+
+            RectTransform buttonTextRect = buttonTabRect.gameObject.GetComponentInChildren<TextMeshProUGUI>().gameObject.GetComponent<RectTransform>();
+            RectTransform buttonTextBefore = tabButtons[0].GetComponentInChildren<TextMeshProUGUI>().gameObject.GetComponent<RectTransform>();
+            float width = buttonTextRect.sizeDelta.x - buttonTextBefore.sizeDelta.x;
+            buttonTextRect.sizeDelta = new Vector2(buttonTextBefore.sizeDelta.x, buttonTextBefore.sizeDelta.y);
+            buttonTextRect.localPosition -= new Vector3(width * 0.5f, 0, 0);
+        }
+
+        newTabRect.localPosition = newTabPos;
+        tabButtons.Add(newTab);
+
+        totalTabLength += newTabRect.sizeDelta.x * newTabRect.localScale.x;
+
         if (totalTabLength > tabBarRect.sizeDelta.x)
         {
             float newWidth = tabBarRect.sizeDelta.x / totalTabLength;
@@ -80,17 +108,19 @@ public class tabButtonManager : MonoBehaviour
             foreach (GameObject tabOBJ in tabButtons)
             {
                 RectTransform tabRect = tabOBJ.GetComponent<RectTransform>();
+                RectTransform buttonTabRect = tabOBJ.GetComponentInChildren<Button>().gameObject.GetComponent<RectTransform>();
+                RectTransform buttonTextRect = buttonTabRect.gameObject.GetComponentInChildren<TextMeshProUGUI>().gameObject.GetComponent<RectTransform>();
                 tabRect.sizeDelta = new Vector2(tabRect.sizeDelta.x * newWidth, tabRect.sizeDelta.y);
+                buttonTabRect.sizeDelta = new Vector2(buttonTabRect.sizeDelta.x * newWidth, buttonTabRect.sizeDelta.y);
 
-                ////RESIZE BUTTONS AS WELL
+                float width = buttonTextRect.sizeDelta.x;
+                buttonTextRect.sizeDelta = new Vector2(buttonTextRect.sizeDelta.x * newWidth, buttonTextRect.sizeDelta.y);
+                width = width - buttonTextRect.sizeDelta.x;
+                buttonTextRect.localPosition -= new Vector3(width * 0.5f, 0, 0);
             }
+
+            float t = repositionTabs();
         }
-
-        ////REPOSITION THE BUTTONS
-
-        newTabPos += new Vector2(totalTabLength, 0);
-        newTabRect.localPosition = newTabPos;
-        tabButtons.Add(newTab);
 
         EventTrigger trigger = newTab.GetComponentInChildren<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
