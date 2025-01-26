@@ -47,4 +47,9 @@ public class HotTrendBehavior : MonoBehaviour
             }
         }
     }
+
+    public string[] GetHotTrends()
+    {
+        return hotTrends;
+    }
 }

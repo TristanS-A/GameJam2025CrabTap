@@ -4,14 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using TMPro;
+using UnityEditor.PackageManager.UI;
 
 public class DomainManager : MonoBehaviour
 {
     [SerializeField] private TMP_InputField mInputField;
     [SerializeField] private Button mConfirmButton;
-    private HashSet<string> mAqquiredDomains;        ///CHANGE THIS TO REMOVE ADDED DOMAINS
+    private List<Website> mAqquiredDomains;        ///CHANGE THIS TO REMOVE ADDED DOMAINS
     private beanKounter money;
     private trendManager trend;
+    public Website website;
 
     private void Start()
     {
@@ -19,28 +21,6 @@ public class DomainManager : MonoBehaviour
         mConfirmButton.onClick.AddListener(checkAndConfirmDomainID);
         money = GameObject.FindWithTag("money").GetComponent<beanKounter>();
         trend = GameObject.FindWithTag("trends").GetComponent<trendManager>();
-    }
-
-    private float getTop3Mult(string[] trends)
-    {
-        float mult = 1f;
-        foreach (string trend in trends)
-        {
-            if (DomainStorage.HotTrends[0] == trend)
-            {
-                mult += 3f;
-            }
-            else if (DomainStorage.HotTrends[1] == trend)
-            {
-                mult += 2f;
-            }
-            else if (DomainStorage.HotTrends[2] == trend)
-            {
-                mult += 1.5f;
-            }
-        }
-
-        return mult;
     }
 
     private void checkAndConfirmDomainID()
@@ -58,10 +38,9 @@ public class DomainManager : MonoBehaviour
             float f = 0.20f;
             for(int i = 0; i < possibleDomainInfo.Value.trends.Length; i++)
             {
-                f *= getTop3Mult(possibleDomainInfo.Value.trends);
+                f *= website.getTop3Mult(possibleDomainInfo.Value.trends);
             }
             money.addMonee(f);
-
             eventSystem.fireEvent(new NewTabEvent(possibleDomainInfo.Value.url));
         }
         else
