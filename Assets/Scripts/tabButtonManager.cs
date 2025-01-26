@@ -18,6 +18,9 @@ public class tabButtonManager : MonoBehaviour
     [SerializeField] Button websiteTabTemplate;
     [SerializeField] Canvas canvas;
     private RectTransform tabBarRect;
+    private float minTabRectWidth;
+    private float minTabButtonRectWidth;
+    private float minTabTextRectWidth;
 
     private List<GameObject> tabButtons = new List<GameObject>();
 
@@ -37,6 +40,10 @@ public class tabButtonManager : MonoBehaviour
     void Start()
     {
         DomainStorage.CurrWindow = _DomainWindow;
+
+        minTabRectWidth = tabPrefab.GetComponent<RectTransform>().sizeDelta.x;
+        minTabButtonRectWidth = tabPrefab.GetComponent<RectTransform>().gameObject.GetComponentInChildren<Button>().gameObject.GetComponent<RectTransform>().sizeDelta.x;
+        minTabTextRectWidth = tabPrefab.GetComponent<RectTransform>().gameObject.GetComponentInChildren<TextMeshProUGUI>().gameObject.GetComponent<RectTransform>().sizeDelta.x;
 
         tabBarRect = GetComponent<RectTransform>();
         addTab("Domains", "www.domains.com");
@@ -197,11 +204,25 @@ public class tabButtonManager : MonoBehaviour
                 RectTransform tabRect = tabOBJ.GetComponent<RectTransform>();
                 RectTransform buttonTabRect = tabOBJ.GetComponentInChildren<Button>().gameObject.GetComponent<RectTransform>();
                 RectTransform buttonTextRect = buttonTabRect.gameObject.GetComponentInChildren<TextMeshProUGUI>().gameObject.GetComponent<RectTransform>();
+
                 tabRect.sizeDelta = new Vector2(tabRect.sizeDelta.x * newWidth, tabRect.sizeDelta.y);
+                if (tabRect.sizeDelta.x > minTabRectWidth)
+                {
+                    tabRect.sizeDelta = new Vector2(minTabRectWidth, tabRect.sizeDelta.y);
+                }
+
                 buttonTabRect.sizeDelta = new Vector2(buttonTabRect.sizeDelta.x * newWidth, buttonTabRect.sizeDelta.y);
+                if (buttonTabRect.sizeDelta.x > minTabButtonRectWidth)
+                {
+                    buttonTabRect.sizeDelta = new Vector2(minTabButtonRectWidth, buttonTabRect.sizeDelta.y);
+                }
 
                 float width = buttonTextRect.sizeDelta.x;
                 buttonTextRect.sizeDelta = new Vector2(buttonTextRect.sizeDelta.x * newWidth, buttonTextRect.sizeDelta.y);
+                if (buttonTextRect.sizeDelta.x > minTabTextRectWidth)
+                {
+                    buttonTextRect.sizeDelta = new Vector2(minTabTextRectWidth, buttonTextRect.sizeDelta.y);
+                }
                 width = buttonTextRect.sizeDelta.x - width;
                 buttonTextRect.localPosition += new Vector3(width * 0.5f, 0, 0);
             }
