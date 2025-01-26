@@ -221,10 +221,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $1.00
+  m_text: 1.00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b8e4e408cfa69cd41829a051d0870df3, type: 2}
+  m_sharedMaterial: {fileID: -7092729218572949491, guid: b8e4e408cfa69cd41829a051d0870df3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -591,15 +591,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Buy
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b8e4e408cfa69cd41829a051d0870df3, type: 2}
+  m_sharedMaterial: {fileID: -7092729218572949491, guid: b8e4e408cfa69cd41829a051d0870df3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8000001, g: 0.86274517, b: 0.9215687, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1017,7 +1017,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mInputField: {fileID: 5828855565832948418}
   mConfirmButton: {fileID: 6186532626829669438}
-  m_ErrorPopup: {fileID: 5910551585824794755, guid: 37aa5b55800643f4ba4c017b43e8315b, type: 3}
 --- !u!1 &8819248455532950037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,8 +1219,8 @@ Transform:
   m_GameObject: {fileID: 9126594110459399912}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00031, y: -0.02464, z: 0}
-  m_LocalScale: {x: 0.97988874, y: 0.91375417, z: 1}
+  m_LocalPosition: {x: -0.00579, y: 0.04809, z: 0}
+  m_LocalScale: {x: 0.09083034, y: 0.111743584, z: 0.09093144}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4961665645426117460}
@@ -1267,7 +1266,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de5243ac98cb49141b4bc5bd706d4ea3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

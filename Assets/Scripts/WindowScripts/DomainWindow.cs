@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class DomainWindow : MonoBehaviour
 {
     [SerializeField] private GameObject mDomainGroup;
     [SerializeField] private GameObject mDomainIDGroup;
+    [SerializeField] public TMP_FontAsset font;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,7 @@ public class DomainWindow : MonoBehaviour
         domainTextComp.text = domainInfo.url;
         domainTextComp.color = Color.black;
         domainTextComp.fontSize = 0.5f;
+        domainTextComp.font = font;
         domainRect.sizeDelta = new Vector2(8, 1);
         newDomainURLOBJ.transform.SetParent(newDomainOBJ.transform);
 
@@ -47,6 +50,7 @@ public class DomainWindow : MonoBehaviour
         domainTextComp.text = domainID;
         domainTextComp.color = Color.black;
         domainTextComp.fontSize = 0.5f;
+        domainTextComp.font = font;
         domainRect.sizeDelta = new Vector2(8, 1);
         domainRect.position = new Vector2(9, 0);
         newDomainIDOBJ.transform.SetParent(newDomainOBJ.transform);

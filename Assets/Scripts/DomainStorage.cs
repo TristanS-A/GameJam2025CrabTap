@@ -177,9 +177,9 @@ public static class DomainStorage
         {
             "Video Games", "Pop Culture"
         }));
-        urls.Add(new DomainInfo("thosecupswithblueandpurplescribbles.com", new string[]
+        urls.Add(new DomainInfo("cupwithblueandpurplescribbles.com", new string[]
         {
-            "Pop Culture"
+            "Pop Culture", "Business", "Fashion"
         }));
         urls.Add(new DomainInfo("skateboards4posers.gov", new string[]
         {
