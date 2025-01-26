@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 public static class DomainStorage
@@ -8,7 +9,8 @@ public static class DomainStorage
     private static Dictionary<string, GameObject> windows = new();
     private static List<DomainInfo> urls = new List<DomainInfo>();
     private static List<string> trends;
-
+    private static string[] hotTrends = new string[3];
+    
     public struct DomainInfo
     {
         public string[] trends;
@@ -19,6 +21,12 @@ public static class DomainStorage
             this.url = url;
             this.trends = trends;
         }
+    }
+
+    public static string[] HotTrends
+    {
+        get { return hotTrends; }
+        set { hotTrends = value; }
     }
 
     public static Nullable<DomainInfo> getDomainInfoFromID(string id)

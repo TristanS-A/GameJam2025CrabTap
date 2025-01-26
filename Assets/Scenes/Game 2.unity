@@ -415,11 +415,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4961665645426117460, guid: 734873bd3c9685a488e802a505c4e748, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.4748854
       objectReference: {fileID: 0}
     - target: {fileID: 4961665645426117460, guid: 734873bd3c9685a488e802a505c4e748, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.35
+      value: 0.09272844
       objectReference: {fileID: 0}
     - target: {fileID: 4961665645426117460, guid: 734873bd3c9685a488e802a505c4e748, type: 3}
       propertyPath: m_LocalPosition.z
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9933f87ad949c0349995580131b8d994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalTime: 360
+  finalTime: 10
   t: {fileID: 400263788}
 --- !u!1 &726643605 stripped
 GameObject:
@@ -1009,6 +1009,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1782488904}
+  - component: {fileID: 1782488905}
   m_Layer: 0
   m_Name: trendManager
   m_TagString: trends
@@ -1031,6 +1032,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1782488905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782488903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c80c811a04192041b3edacf78b64209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2051802837
 PrefabInstance:
   m_ObjectHideFlags: 0

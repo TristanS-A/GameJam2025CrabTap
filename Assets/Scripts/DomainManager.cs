@@ -17,9 +17,30 @@ public class DomainManager : MonoBehaviour
     {
         mInputField.ActivateInputField();
         mConfirmButton.onClick.AddListener(checkAndConfirmDomainID);
-        DomainStorage.BuildUrlPacks();
         money = GameObject.FindWithTag("money").GetComponent<beanKounter>();
         trend = GameObject.FindWithTag("trends").GetComponent<trendManager>();
+    }
+
+    private float getTop3Mult(string[] trends)
+    {
+        float mult = 1f;
+        foreach (string trend in trends)
+        {
+            if (DomainStorage.HotTrends[0] == trend)
+            {
+                mult += 3f;
+            }
+            else if (DomainStorage.HotTrends[1] == trend)
+            {
+                mult += 2f;
+            }
+            else if (DomainStorage.HotTrends[2] == trend)
+            {
+                mult += 1.5f;
+            }
+        }
+
+        return mult;
     }
 
     private void checkAndConfirmDomainID()
@@ -37,7 +58,7 @@ public class DomainManager : MonoBehaviour
             float f = 0.20f;
             for(int i = 0; i < possibleDomainInfo.Value.trends.Length; i++)
             {
-                f *= trend.getTrendMult(possibleDomainInfo.Value.trends[i]);
+                f *= getTop3Mult(possibleDomainInfo.Value.trends);
             }
             money.addMonee(f);
             ///ADD NEW TAB

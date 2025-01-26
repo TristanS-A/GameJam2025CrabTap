@@ -15,7 +15,7 @@ public class moneyText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerMoney.addMonee(0.05f);
+        //playerMoney.addMonee(0.05f);
         string s = "$" + (Mathf.Round(playerMoney.getMonee() * 100f) / 100f).ToString();
         if(s.Length - s.IndexOf(".") <= 2)
         {
