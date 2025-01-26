@@ -39,7 +39,7 @@ public class DomainManager : MonoBehaviour
 
     private void checkAndConfirmDomainID()
     {
-        Nullable<DomainStorage.DomainInfo> possibleDomainInfo = DomainStorage.getDomainInfoFromID(mInputField.text);
+        Nullable<DomainStorage.DomainInfo> possibleDomainInfo = DomainStorage.getDomainInfoFromID(mInputField.text.ToLower());
         if (possibleDomainInfo != null)
         {
             if (playerMoneyHandler.PlayerMoney < possibleDomainInfo.Value.price)
