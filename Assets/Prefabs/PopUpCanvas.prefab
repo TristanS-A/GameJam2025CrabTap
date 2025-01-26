@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3062126929818028043}
   - component: {fileID: 277346818160733120}
   - component: {fileID: 7804086029355275575}
-  - component: {fileID: 1257851942158577768}
+  - component: {fileID: 1582017163604968074}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1257851942158577768
+--- !u!114 &1582017163604968074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,9 +86,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 396392728586498759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 988a7e42a138d3f4e8e465a57f5a4202, type: 3}
+  m_Script: {fileID: 11500000, guid: dbe0cacdce5f1554187acb610a85b44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xButton: {fileID: 330583373080109770}
   rectTransform: {fileID: 3062126929818028043}
   borderRect: {fileID: 6467314083575921373}
   popUpImages:
@@ -97,9 +98,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 40dc014f535a1fa49942479f146f6fb9, type: 3}
   - {fileID: 21300000, guid: b3f59acd9f3dff34997e1d59fc5e39a0, type: 3}
   - {fileID: 21300000, guid: 649615382f77bbb409252129ad79e53f, type: 3}
-  mainCanvas: {fileID: 537120708562622787}
-  xButton: {fileID: 330583373080109770}
-  timerScript: {fileID: 0}
 --- !u!1 &5288950255201346737
 GameObject:
   m_ObjectHideFlags: 0
