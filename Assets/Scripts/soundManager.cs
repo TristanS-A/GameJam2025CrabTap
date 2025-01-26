@@ -29,6 +29,7 @@ public class soundManager : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         //Setup song sound player
         GameObject s = new GameObject("song");
         AudioSource a = s.AddComponent<AudioSource>();
