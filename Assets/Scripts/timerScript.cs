@@ -13,7 +13,7 @@ public class timerScript : MonoBehaviour
     void Start()
     {
         timeElapsed = finalTime;
-        playGame();
+        //playGame();
     }
 
     void Update()
@@ -43,11 +43,12 @@ public class timerScript : MonoBehaviour
         }
     }
 
-    //Function to start timer
+    //Function to start timer and song
     public void playGame()
     {
         timeElapsed = finalTime;
         startGame = true;
+        soundManager.Instance.startSong();
     }
 
     private string convertTimer()

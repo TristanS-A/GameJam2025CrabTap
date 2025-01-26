@@ -32,7 +32,7 @@ public class sceneMan : MonoBehaviour
     public void startGame()
     {
         SceneManager.LoadScene("Game 2");
-        soundManager.Instance.startSong();
+        //soundManager.Instance.startSong();
     }
 
     public void mainMenu(UnityEngine.Video.VideoPlayer vp)
