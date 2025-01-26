@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
 using TMPro;
-using UnityEditor.PackageManager.UI;
 
 public class DomainManager : MonoBehaviour
 {
