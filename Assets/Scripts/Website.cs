@@ -102,7 +102,7 @@ public class Website : MonoBehaviour
 
         playerMoneyHandler.PlayerMoney += siteProfits;
 
-        //soundManager.Instance.playSFX();
+        soundManager.Instance.playSFX(14);
         eventSystem.fireEvent(new RemoveTabEvent(DomainStorage.getBoughtDomainInfoFromID(urlID).Value.url));
         Destroy(gameObject);
     }

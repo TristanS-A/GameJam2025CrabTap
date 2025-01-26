@@ -12,6 +12,7 @@ public class titleButton : MonoBehaviour
     void Start()
     {
         s = GameObject.FindWithTag("SceneManager").GetComponent<sceneMan>();
+        soundManager.Instance.playSFX(15);
         b.onClick.AddListener(s.startGame);
     }
 

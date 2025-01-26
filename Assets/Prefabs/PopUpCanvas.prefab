@@ -102,6 +102,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ae71797a36c391c4f935fa721863aad2, type: 3}
   - {fileID: 21300000, guid: 41dc227a881ff8c42a8254dbc3cab0bf, type: 3}
   - {fileID: 21300000, guid: 006ba48d4cbd9b94b80d2eab2321fa1d, type: 3}
+  - {fileID: 21300000, guid: bcddebdf80aefb349acfa98b582d8cd8, type: 3}
+  - {fileID: 21300000, guid: 8d521a934e0bdf3448801728f5cf460e, type: 3}
+  - {fileID: 21300000, guid: 07dc2765e2f8e57459f6fe043c53c3b9, type: 3}
+  - {fileID: 21300000, guid: 09ac32c5a5de4af4ab28e1d9a2dba787, type: 3}
+  - {fileID: 21300000, guid: 403a913a28cbec141a061f5c39ee42cb, type: 3}
 --- !u!1 &5288950255201346737
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +193,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &1743481087815724811
 MonoBehaviour:
   m_ObjectHideFlags: 0
