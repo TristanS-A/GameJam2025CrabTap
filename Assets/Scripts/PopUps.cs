@@ -63,7 +63,7 @@ public class PopUps : MonoBehaviour
         currentRandImageIndex = Random.Range(0, popUpImages.Length);
         currentImage = popUpImages[currentRandImageIndex];
         gameObject.GetComponent<Image>().sprite = currentImage;
-        imagePosition.x = Random.Range(-500, 400);
+        imagePosition.x = Random.Range(-400, 300);
         imagePosition.y = Random.Range(-150, 210);
         rectTransform.anchoredPosition = imagePosition;
         borderRect.anchoredPosition = imagePosition;
