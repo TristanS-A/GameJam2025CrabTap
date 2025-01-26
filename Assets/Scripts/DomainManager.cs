@@ -59,6 +59,8 @@ public class DomainManager : MonoBehaviour
             eventSystem.fireEvent(new NewTabEvent(possibleDomainInfo.Value.url));
             Website newWebsite = DomainStorage.getWindowFromKey(possibleDomainInfo.Value.url).GetComponent<Website>();
             newWebsite.urlID = mInputField.text;
+            //Plays correct buy sound effect
+            soundManager.Instance.playSFX(0);
         }
         else
         {
