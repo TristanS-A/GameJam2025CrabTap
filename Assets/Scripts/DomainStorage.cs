@@ -28,10 +28,14 @@ public static class DomainStorage
         }
     }
 
-    public static void reset()
+    public static void resetURLS()
     {
         urlIdPairs.Clear();
         baughtURLs.Clear();
+    }
+
+    public static void resetWindows()
+    {
         windows.Clear();
     }
 

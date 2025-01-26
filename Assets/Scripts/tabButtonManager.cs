@@ -39,6 +39,7 @@ public class tabButtonManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DomainStorage.resetWindows();
         DomainStorage.CurrWindow = _DomainWindow;
 
         minTabRectWidth = tabPrefab.GetComponent<RectTransform>().sizeDelta.x;
