@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sell
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b8e4e408cfa69cd41829a051d0870df3, type: 2}
+  m_sharedMaterial: {fileID: -7092729218572949491, guid: b8e4e408cfa69cd41829a051d0870df3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -307,7 +307,7 @@ MonoBehaviour:
   timer: {fileID: 0}
   hotTrendBehavior: {fileID: 0}
   money: {fileID: 0}
-  trendMulti: 0
+  initialTrendVal: 0
   baseValue: 0
   urlID: 
 --- !u!1 &7954486943491580759
@@ -461,8 +461,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Website Value
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b8e4e408cfa69cd41829a051d0870df3, type: 2}
+  m_sharedMaterial: {fileID: -7092729218572949491, guid: b8e4e408cfa69cd41829a051d0870df3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

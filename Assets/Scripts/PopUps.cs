@@ -12,10 +12,7 @@ public class PopUps : MonoBehaviour
     public Sprite[] popUpImages;
     public Canvas mainCanvas;
     public timerScript timerScript;
-
-    private Vector2 imagePosition;
-    private Sprite currentImage;
-    private int missedPopUpCounter = 0;
+    private float gracePeriod = 20f;
 
     private bool createdLastFrame = false;
 
@@ -26,17 +23,24 @@ public class PopUps : MonoBehaviour
 
     void Update()
     {
-        if ((int)timerScript.getTimeElapsed() % 10 == 0)
+        if (gracePeriod > 0)
         {
-            if (timerScript.getStartGame() && !createdLastFrame)
-            {
-                CreatePopUp();
-                createdLastFrame = true;
-            }
+            gracePeriod -= Time.deltaTime;
         }
         else
         {
-            createdLastFrame = false;
+            if ((int)timerScript.getTimeElapsed() % 10 == 0)
+            {
+                if (timerScript.getStartGame() && !createdLastFrame)
+                {
+                    CreatePopUp();
+                    createdLastFrame = true;
+                }
+            }
+            else
+            {
+                createdLastFrame = false;
+            }
         }
     }
 

@@ -13,20 +13,30 @@ public class HotTrendBehavior : MonoBehaviour
     private List<string> allTrends;
     private List<string> alreadyUsedTrends = new List<string>();
 
+    private int randNum;
+    private bool hasChanged = false;
+
     void Start()
     {
+        Debug.Log(randNum);
         allTrends = DomainStorage.createFullTrendList();
         FillTrends();
     }
 
     void Update()
     {
-        if ((int)timer.getTimeElapsed() % 30 == 0)
+        if ((int)timer.getTimeElapsed() % randNum == 0)
         {
             if(timer.getStartGame())
             {
                 FillTrends();
+                hasChanged = true;
             }
+        }
+        else if (hasChanged)
+        {
+            randNum = Random.Range(30, 50);
+            hasChanged = false;
         }
     }
 
