@@ -31,6 +31,7 @@ public class DomainWindow : MonoBehaviour
         GameObject newDomainOBJ = new GameObject("Domain");
         GameObject newDomainURLOBJ = new GameObject("DomainURL");
         GameObject newDomainIDOBJ = new GameObject("DomainID");
+        GameObject newDomainPriceOBJ = new GameObject("DomainPrice");
 
         RectTransform domainRect = newDomainOBJ.AddComponent<RectTransform>();
         domainRect.sizeDelta = new Vector2(5, 1);
@@ -52,8 +53,18 @@ public class DomainWindow : MonoBehaviour
         domainTextComp.fontSize = 0.5f;
         domainTextComp.font = font;
         domainRect.sizeDelta = new Vector2(8, 1);
-        domainRect.position = new Vector2(9, 0);
+        domainRect.position = new Vector2(8, 0);
         newDomainIDOBJ.transform.SetParent(newDomainOBJ.transform);
+
+        domainTextComp = newDomainPriceOBJ.AddComponent<TextMeshProUGUI>();
+        domainRect = newDomainPriceOBJ.GetComponent<RectTransform>();
+        domainTextComp.text = "$" + domainInfo.price.ToString("0.00");
+        domainTextComp.color = Color.black;
+        domainTextComp.fontSize = 0.5f;
+        domainTextComp.font = font;
+        domainRect.sizeDelta = new Vector2(8, 1);
+        domainRect.position = new Vector2(13, 0);
+        newDomainPriceOBJ.transform.SetParent(newDomainOBJ.transform);
 
         newDomainOBJ.transform.SetParent(mDomainGroup.transform);
     }

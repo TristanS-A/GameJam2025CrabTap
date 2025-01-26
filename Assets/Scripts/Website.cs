@@ -12,7 +12,7 @@ public class Website : MonoBehaviour
     public timerScript timer;
     public HotTrendBehavior hotTrendBehavior;
     public beanKounter money;
-    public float trendMulti;
+    public float initialTrendVal;
     public float baseValue;
     public string urlID;
     private string[] trends;
@@ -24,7 +24,7 @@ public class Website : MonoBehaviour
         trends = DomainStorage.getBoughtDomainInfoFromID(urlID).Value.trends;
         for (int i = 0; i < trends.Length; i++)
         {
-            trendMulti = getTop3Mult(trends);
+            initialTrendVal = getTop3Mult(trends);
         }
 
         timer = GameObject.FindWithTag("Timer").GetComponent<timerScript>();
@@ -35,7 +35,7 @@ public class Website : MonoBehaviour
 
     void FixedUpdate()
     {
-        if ((int)timer.getTimeElapsed() % 15 == 0)
+        if ((int)timer.getTimeElapsed() % 5 == 0)
         {
             if (timer.getStartGame())
             {
@@ -45,7 +45,7 @@ public class Website : MonoBehaviour
                     trendVal = getTop3Mult(trends);
                 }
 
-                siteProfits += baseValue * trendVal;
+                siteProfits += baseValue * trendVal * initialTrendVal;
                 mSellText.text = "Website Value: $" + siteProfits.ToString("0.00");
             }
         }
@@ -53,27 +53,24 @@ public class Website : MonoBehaviour
 
     public float getTop3Mult(string[] trends)
     {
-        Debug.Log(DomainStorage.HotTrends[0]);
-        Debug.Log(DomainStorage.HotTrends[1]);
-        Debug.Log(DomainStorage.HotTrends[2]);
-        trendMulti = 1f;
+        float trendVal = 1f;
         foreach (string trend in trends)
         {
             if (DomainStorage.HotTrends[0] == trend)
             {
-                trendMulti += 3f;
+                trendVal += 3f;
             }
             else if (DomainStorage.HotTrends[1] == trend)
             {
-                trendMulti += 2f;
+                trendVal += 2f;
             }
             else if (DomainStorage.HotTrends[2] == trend)
             {
-                trendMulti += 1.5f;
+                trendVal += 1.5f;
             }
         }
 
-        return trendMulti;
+        return trendVal;
     }
 
     private void sellWebsite()

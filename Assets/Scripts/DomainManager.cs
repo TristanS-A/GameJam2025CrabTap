@@ -42,6 +42,12 @@ public class DomainManager : MonoBehaviour
         Nullable<DomainStorage.DomainInfo> possibleDomainInfo = DomainStorage.getDomainInfoFromID(mInputField.text);
         if (possibleDomainInfo != null)
         {
+            if (playerMoneyHandler.PlayerMoney < possibleDomainInfo.Value.price)
+            {
+                eventSystem.fireEvent(new ErrorEvent("Not enough money!"));
+                return;
+            }
+
             Debug.Log("Exists");
             Debug.Log(possibleDomainInfo.Value.url);
             Debug.Log(possibleDomainInfo.Value.trends);
@@ -49,7 +55,7 @@ public class DomainManager : MonoBehaviour
             DomainStorage.removeID(mInputField.text);
             DomainStorage.addToBoughtURLs(mInputField.text, (DomainStorage.DomainInfo)possibleDomainInfo);
             ///ADD PROFITS AND CALCULATE BASED ON TRENDS    AND URL COST
-            playerMoneyHandler.PlayerMoney -= 0.05f; //SHOULD SUBTRACT BY URL COST
+            playerMoneyHandler.PlayerMoney -= possibleDomainInfo.Value.price; //SHOULD SUBTRACT BY URL COST
             eventSystem.fireEvent(new NewTabEvent(possibleDomainInfo.Value.url));
             Website newWebsite = DomainStorage.getWindowFromKey(possibleDomainInfo.Value.url).GetComponent<Website>();
             newWebsite.urlID = mInputField.text;

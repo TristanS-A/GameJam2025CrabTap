@@ -17,11 +17,13 @@ public static class DomainStorage
     {
         public string[] trends;
         public string url;
+        public float price;
 
         public DomainInfo(string url, string[] trends)
         {
             this.url = url;
             this.trends = trends;
+            this.price = 0.50f;
         }
     }
 
