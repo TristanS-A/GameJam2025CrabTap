@@ -9,6 +9,7 @@ public class Website : MonoBehaviour
 {
     [SerializeField] private Button mSellButton;
     [SerializeField] private TextMeshProUGUI mSellText;
+    [SerializeField] private TextMeshProUGUI mURLText;
     [SerializeField] private Image bg;
     public timerScript timer;
     public HotTrendBehavior hotTrendBehavior;
@@ -33,6 +34,7 @@ public class Website : MonoBehaviour
 
         mSellButton.onClick.AddListener(sellWebsite);
         mSellText.text = "Website Value: $" + siteProfits.ToString("0.00");
+        mURLText.text = "Welcome to: " + DomainStorage.getBoughtDomainInfoFromID(urlID).Value.url + "!";
     }
 
     void FixedUpdate()
