@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd0b9c55e6907124db5afc151ea97c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  song: {fileID: 8300000, guid: 0970d59f40774904683c2bf704f21dca, type: 3}
+  song: {fileID: 8300000, guid: ebb4accef4c17e3478ce551273121a80, type: 3}
   sfx:
   - {fileID: 8300000, guid: 8141286f938cc37458a2535cae6b2542, type: 3}
   - {fileID: 8300000, guid: eac7c6bfc98f2604d970deb433f0e179, type: 3}
